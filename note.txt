@@ -1,0 +1,5 @@
+generate favicon:
+https://realfavicongenerator.net/
+
+convert svg -> png:
+https://cloudconvert.com/svg-to-png

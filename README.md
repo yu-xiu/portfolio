@@ -3,14 +3,11 @@
 
 ##### Created : 08/24/2025
 
-# My Personal Portfolio
+# Tiffany Xiu - Personal Portfolio
 Welcome to Tiffany's portfolio website.
 
-### Credits
-
-This portfolio template was originally created by [ChiragChrg](https://github.com/ChiragChrg).  
-I have customized and modified it to build my personal portfolio.  
-Many thanks to the original author for the great work!
+This is my personal developer portfolio website showcasing my projects, skills, and experiences.  
+<!-- 🌐 Live Demo: [https://tiffany-portfolio.vercel.app](https://tiffany-portfolio.vercel.app) -->
 
 <br/>
 
@@ -26,13 +23,32 @@ The portfolio leverages the following technologies:
 </div>
 
 
-## 🌟 Features
+## 🌟 Highlights
 
 - **Optimized Performance**: Built with Astro for lightning-fast load times.
 - **Responsive Design**: Tailored for all devices using TailwindCSS.
 - **Interactive Animations**: Powered by GSAP for smooth transitions.
 - **SEO Friendly**: Enhanced visibility with Astro SEO integration.
 - **Dynamic Components**: Utilizes Preact for modular and reusable UI elements.
+
+## 🌟 Features
+- ✨ About Me section
+- 💼 Projects showcase
+- 📄 Resume/CV link
+- 📬 Tech stack
+
+## 🚀 Getting Started
+1. Clone this repo
+2. Install dependencies: `npm install`
+3. Run locally: `npm run dev`
+4. Build for production: `npm run build`
+
+
+### Credits
+
+This portfolio template was originally created by [ChiragChrg](https://github.com/ChiragChrg).  
+I have customized and modified it to build my personal portfolio.  
+Many thanks to the original author for the great work!
 
 ## 📄 License
 

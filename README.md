@@ -37,7 +37,7 @@ The portfolio leverages the following technologies:
 - 📄 Resume/CV link
 - 📬 Tech stack
 
-## 🚀 Getting Started
+## 🚀 Installation and Setup
 1. Clone this repo
 2. Install dependencies: `npm install`
 3. Run locally: `npm run dev`

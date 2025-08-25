@@ -1,12 +1,12 @@
 [![Netlify Status](https://api.netlify.com/api/v1/badges/530c2667-5dbc-4df3-824c-de37f975c833/deploy-status)](https://app.netlify.com/sites/chiragchrg/deploys)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-##### Created : 09/04/2023
+##### Created : 08/24/2025
 
 # My Personal Portfolio
 Welcome to Tiffany's portfolio website.
 
-## Credits
+### Credits
 
 This portfolio template was originally created by [ChiragChrg](https://github.com/ChiragChrg).  
 I have customized and modified it to build my personal portfolio.  

@@ -5,3 +5,6 @@ convert svg -> png:
 https://cloudconvert.com/svg-to-png
 
 deploy on vercel
+
+convert png -> webp
+https://convertio.co/png-webp/

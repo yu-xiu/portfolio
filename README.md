@@ -44,7 +44,7 @@ The portfolio leverages the following technologies:
 4. Build for production: `npm run build`
 
 
-### Credits
+## 📄 Credits
 
 This portfolio template was originally created by [ChiragChrg](https://github.com/ChiragChrg).  
 I have customized and modified it to build my personal portfolio.  

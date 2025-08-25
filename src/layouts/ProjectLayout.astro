@@ -27,41 +27,29 @@ import { Footer } from "../components";
         <SEO
             title={title}
             description={description}
-            canonical=`https://chiragchrg.netlify.app/projects/${title.replace(" | ChiragChrg","").replaceAll(" ","-").toLowerCase()}`
+            canonical=`https://tiffanyxiu.vercel.app/projects/${title.replace(" | Tiffany Xiu","").replaceAll(" ","-").toLowerCase()}`
+
             openGraph={{
                 basic: {
                     title: `${title}`,
                     type: "website",
-                    image: "https://raw.githubusercontent.com/ChiragChrg/ChiragChrg.github.io/main/Avatar.webp",
-                    url: "https://chiragchrg.netlify.app/",
+                    image: "https://tiffanyxiu.vercel.app/web-app-icon.png",
+                    url: "https://tiffanyxiu.vercel.app/",
                 },
             }}
-            twitter={{
-                title: `${title}`,
-                description: `${description}`,
-                card: "summary",
-                site: "@ChrgChirag",
-                creator: "@ChrgChirag",
-                image: "https://raw.githubusercontent.com/ChiragChrg/ChiragChrg.github.io/main/Avatar.webp",
-            }}
+            
             extend={{
                 link: [
-                    { rel: "icon", type: "image/png", href: "/favicon.png" },
+                    { rel: "icon", type: "image/png", href: "/web-app-icon.png" },
                     {
                         rel: "shortcut",
                         type: "image/png",
-                        href: "/favicon.png",
+                        href: "/web-app-icon.png",
                     },
                     {
                         rel: "apple-touch-icon",
                         type: "image/png",
-                        href: "/favicon.png",
-                    },
-                ],
-                meta: [
-                    {
-                        name: "twitter:url",
-                        content: "https://chiragchrg.netlify.app/",
+                        href: "/web-app-icon.png",
                     },
                 ],
             }}

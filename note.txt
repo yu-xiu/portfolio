@@ -8,3 +8,7 @@ deploy on vercel
 
 convert png -> webp
 https://convertio.co/png-webp/
+
+
+some icones
+https://icons8.com/icons/set/pytorch

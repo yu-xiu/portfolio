@@ -1,7 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import Avatar_250 from "../Avatar_250.webp";
-import about_me_img from "../about_me_img.webp";
+import about_avatar from "../about_avatar.webp";
 import { SectionTitle } from "./UI";
 ---
 
@@ -13,12 +13,12 @@ import { SectionTitle } from "./UI";
     >
         <div class="flex_center flex-col lg:flex-row w-full h-full py-10 gap-8">
             <Image
-                src={about_me_img}
+                src={about_avatar}
                 alt="About_Avatar"
                 class="Fade_Up rounded-full lg:mx-14"
                 width={225}
                 height={225}
-                srcset={`${about_me_img.src} 200w, ${about_me_img.src} 250w`}
+                srcset={`${about_avatar.src} 200w, ${about_avatar.src} 250w`}
                 sizes="(min-width: 1024px) 225px, 225px"
                 loading="lazy"
             />

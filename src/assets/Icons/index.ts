@@ -44,3 +44,13 @@ export { default as NetlifyIcon } from "./netlify.svg"
 export { default as VercelIcon } from "./vercel.svg"
 export { default as VsCodeIcon } from "./vscode.svg"
 export { default as FigmaIcon } from "./figma.svg"
+
+// ML-framework
+export { default as googlecolab } from "./googlecolab.svg"
+
+export { default as jupyter } from "./jupyter.svg"
+export { default as pytorch } from "./pytorch.svg"
+export { default as gymnasium } from "./gym.svg"
+export { default as ray } from "./ray.svg"
+export { default as scikitlearn } from "./scikit-learn.svg"
+export { default as spacy } from "./spacy.svg"

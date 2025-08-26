@@ -1,6 +1,7 @@
 ---
 import { Image } from "astro:assets";
 import Avatar_250 from "../Avatar_250.webp";
+import about_me_img from "../about_me_img.webp";
 import { SectionTitle } from "./UI";
 ---
 
@@ -12,46 +13,32 @@ import { SectionTitle } from "./UI";
     >
         <div class="flex_center flex-col lg:flex-row w-full h-full py-10 gap-8">
             <Image
-                src={Avatar_250}
+                src={about_me_img}
                 alt="About_Avatar"
-                class="Fade_Up rounded-full scale-x-[-1] lg:mx-14"
+                class="Fade_Up rounded-full lg:mx-14"
                 width={225}
                 height={225}
+                srcset={`${about_me_img.src} 200w, ${about_me_img.src} 250w`}
+                sizes="(min-width: 1024px) 225px, 225px"
                 loading="lazy"
             />
 
             <div
                 class="Fade_Up w-full md:w-[80%] lg:w-[60%] flex justify-center items-start flex-col gap-4 lg:border-l border-primary py-8 lg:pl-10"
             >
-                <h2 class="Fade_Up text-[1.5em] font-bold">Hey there! 👋🏻</h2>
+                <h2 class="Fade_Up text-[1.5em] font-bold">Welcome to my page! 👋🏻</h2>
                 <p class="Fade_Up text-justify">
-                    I'm Chirag, a full stack web developer with a strong passion
-                    for crafting digital realms that captivate and inspire.
+                    I’m Tiffany, a recent Computer Science graduate passionate about Artificial Intelligence, Natural Language Processing, and data analysis. 
+                    I’ve worked on reinforcement learning for network optimization with explainable AI, and I previously interned at NASA Ames, 
+                    where I contributed to spacecraft system modeling and testing. I enjoy building AI applications that combine research with real-world impact.
+
                 </p>
                 <p class="Fade_Up text-justify">
-                    I specialize in creating dynamic and interactive UI/UX
-                    experience. I stay up to date with the latest tools and
-                    techniques and worked on a wide range of projects, from
-                    personal websites to large-scale applications, sharpening my
-                    problem solving skills and fostering creativity.
+                    Alongside my projects in reinforcement learning, NLP, and data analysis, I’m also building an early-stage AI startup. 
                 </p>
-                <p class="Fade_Up text-justify">
-                    If you're seeking a dedicated and passionate web developer,
-                    I'm eager to collaborate with you. Let's bring your ideas to
-                    life!
-                </p>
+            
             </div>
         </div>
 
-        <!-- <picture class="flex_center">
-            <source
-                media="(prefers-color-scheme: dark)"
-                srcset="https://raw.githubusercontent.com/ChiragChrg/ChiragChrg/output/github-contribution-grid-snake-dark.svg"
-            />
-            <img
-                alt="github contribution grid snake animation"
-                src="https://raw.githubusercontent.com/ChiragChrg/ChiragChrg/output/github-contribution-grid-snake.svg"
-            />
-        </picture> -->
     </SectionTitle>
 </section>

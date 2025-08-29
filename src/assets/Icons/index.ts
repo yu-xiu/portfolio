@@ -33,6 +33,9 @@ export { default as PythonIcon } from "./python.svg"
 export { default as CppIcon } from "./cpp.svg"
 export { default as JavaIcon } from "./java.svg"
 export { default as RIcon } from "./Rlogo.svg"
+export { default as C } from "./C_Programming_logo.svg"
+export { default as LISP } from "./lisp.svg"
+export { default as MatLab } from "./matlab.svg"
 
 // Tools-Stack
 export { default as NpmIcon } from "./npm.svg"
@@ -41,16 +44,31 @@ export { default as BunIcon } from "./bun.svg"
 export { default as ViteIcon } from "./vitejs.svg"
 export { default as SocketIoIcon } from "./socketio.svg"
 export { default as NetlifyIcon } from "./netlify.svg"
-export { default as VercelIcon } from "./vercel.svg"
 export { default as VsCodeIcon } from "./vscode.svg"
 export { default as FigmaIcon } from "./figma.svg"
+export { default as Bitbucket } from "./bitbucket.svg"
+export { default as Latex } from "./LaTeX.svg"
+export { default as Simulink } from "./simulink.svg"
+export { default as AndroidStudio } from "./Android_Studio.svg"
 
-// ML-framework
-export { default as googlecolab } from "./googlecolab.svg"
+// AI-Data
+export { default as Googlecolab } from "./googlecolab.svg"
+export { default as Jupyter } from "./jupyter.svg"
+export { default as Pytorch } from "./pytorch.svg"
+export { default as Gymnasium } from "./gym.svg"
+export { default as Ray } from "./ray.svg"
+export { default as Scikitlearn } from "./scikit-learn.svg"
+export { default as Spacy } from "./spacy.svg"
+export { default as HuggingFace } from "./hugging-face.svg"
+export { default as TensorFlow } from "./tensorflow.svg"
 
-export { default as jupyter } from "./jupyter.svg"
-export { default as pytorch } from "./pytorch.svg"
-export { default as gymnasium } from "./gym.svg"
-export { default as ray } from "./ray.svg"
-export { default as scikitlearn } from "./scikit-learn.svg"
-export { default as spacy } from "./spacy.svg"
+// Cloud-Devops
+export { default as Docker } from "./docker.svg"
+export { default as Googlecloud } from "./google-cloud.svg"
+export { default as Aws } from "./aws.svg"
+export { default as VercelIcon } from "./vercel.svg"
+export { default as Circleci } from "./circleci.svg"
+export { default as Heroku } from "./heroku.svg"
+
+
+// Mobile-Development

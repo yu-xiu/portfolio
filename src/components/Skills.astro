@@ -1,7 +1,8 @@
 ---
-import { CenterTitle, SkillTitle, SkillGrid } from "./UI";
+import { CenterTitle, SkillTitle, SkillGrid, SubCenterTitle} from "./UI";
 import {
     MLFramework,
+    CloudDevOps,
     FrontendStack,
     BackendStack,
     ProgrammingStack,
@@ -10,21 +11,31 @@ import {
 ---
 
 <section id="skills" class="w-full min-h-screen px-6 py-4 pt-14 bg-background">
-    <CenterTitle title="Tech Stack" color="primary" />
+    <CenterTitle title="Technologies I’ve Worked With" color="primary" />
 
-    <div class="flex justify-center items-start flex-col lg:flex-row gap-2">
+    <SubCenterTitle title="AI/ML & Programming" color="primary" class="text-sm"/>
+
+    <!--first row AI/Data and Programming-->
+    <div 
+        class="Fade_U flex justify-center items-start flex-col lg:flex-row gap-2"
+    >
        <div
             class="Fade_Up flex_center flex-col gap-4 py-4 xs:p-4 w-full h-full"
         >
-            <SkillTitle title="ML-Framework" color="primary" />
+            <SkillTitle title="AI/Data" color="primary" />
             <SkillGrid stack={MLFramework} />
         </div>
+
+        <div
+            class="Fade_Up flex_center flex-col gap-4 py-4 xs:p-4 w-full h-full"
+        >
+            <SkillTitle title="Programming" color="primary" />
+            <SkillGrid stack={ProgrammingStack} />
+        </div>
     </div>
-        
 
-
-
-
+    <SubCenterTitle title="Web & Mobile Development" color="primary" class="text-sm"/>
+    <!--Second row Front-end and Back-end-->
     <div
         class="Fade_Up flex justify-center items-start flex-col lg:flex-row gap-2"
     >
@@ -43,14 +54,19 @@ import {
         </div>
     </div>
 
-    <div class="flex justify-center items-start flex-col lg:flex-row gap-2">
+
+    <SubCenterTitle title="DevOps & Tools" color="primary" class="text-sm"/>
+    <!--Third row cloud-DevOps and Tools-->
+    <div 
+        class="flex justify-center items-start flex-col lg:flex-row gap-2"
+    >
         <div
             class="Fade_Up flex_center flex-col gap-4 py-4 xs:p-4 w-full h-full"
         >
-            <SkillTitle title="Programming" color="primary" />
-            <SkillGrid stack={ProgrammingStack} />
+            <SkillTitle title="Cloud-DevOps" color="primary" />
+            <SkillGrid stack={CloudDevOps} />
         </div>
-
+        
         <div
             class="Fade_Up flex_center flex-col gap-4 py-4 xs:p-4 w-full h-full"
         >

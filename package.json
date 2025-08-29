@@ -9,12 +9,12 @@
     "url": "https://chiragchrg.netlify.app/"
   },
   "scripts": {
-    "dev": "astro dev --host",
-    "start": "astro dev",
-    "build": "astro check && astro build",
-    "preview": "astro preview",
-    "astro": "astro",
-    "lint": "eslint ."
+  "dev": "astro dev --host",
+  "start": "astro dev",
+  "build": "astro build",
+  "typecheck": "astro check",
+  "preview": "astro preview",
+  "lint": "eslint ."
   },
   "dependencies": {
     "@astrojs/check": "^0.9.4",

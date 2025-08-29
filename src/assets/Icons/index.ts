@@ -70,5 +70,3 @@ export { default as VercelIcon } from "./vercel.svg"
 export { default as Circleci } from "./circleci.svg"
 export { default as Heroku } from "./heroku.svg"
 
-
-// Mobile-Development

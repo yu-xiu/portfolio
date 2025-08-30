@@ -1,4 +1,11 @@
 ---
+// provides Astro with the list of all possible route parameters
+// projects 单独project界面里的body部分的排布
+// 设计包括单独project的info section logo, name, tech stack, source code, demo; about the project, features, tech stack的单独介绍
+// contains layout and settings of the body section of each project page
+// ProjectLayout will wrap the body 
+// utilize projectList and ProjectLayout
+
 export function getStaticPaths() {
     return [
         { params: { projectID: "arms-v3" } },
@@ -14,6 +21,7 @@ export function getStaticPaths() {
         { params: { projectID: "film-stack" } },
         { params: { projectID: "covidtrax" } },
         { params: { projectID: "climate" } },
+        { params: { projectID: "xai-emotion" } },
     ];
 }
 const { projectID } = Astro.params;
@@ -32,9 +40,10 @@ const [project] = ProjectsList.filter(
 ---
 
 <ProjectLayout
-    title=`${project.Name} | ChiragChrg`
+    title= {`${project.Name} | Tiffany Xiu`}
     description={project.ShortDesc}
 >
+    <!-- background image setting center blur -->
     <div class="Fade_In flex_center absolute inset-0 w-full h-full z-[-1]">
         <Image
             src={project.Shot}
@@ -42,9 +51,11 @@ const [project] = ProjectsList.filter(
             class="w-full h-full opacity-50 blur-md p-6 object-cover"
             loading="eager"
         />
+        <!-- 避免图片过亮 -->
         <div class="bg-imgOverlayGradient w-full h-full absolute inset-0"></div>
     </div>
 
+    <!-- 项目介绍卡片 project's logo, name, tech stack, source code buttons -->
     <div class="flex_center flex-col gap-4 py-4">
         <Image
             src={project.Logo}
@@ -114,12 +125,14 @@ const [project] = ProjectsList.filter(
         </div>
     </div>
 
+    <!-- about the project -->
     <h2 class="Fade_Up font-ubuntu text-[1.5em] pt-4 pb-3 w-full">
-        About the project.
+        About the project:
     </h2>
     <div
         class="flex justify-center items-center xl:items-start flex-col xl:flex-row gap-4 py-10"
     >
+        <!-- mockup image on the left-hand side -->
         <Image
             src={project.Mockup}
             alt={`${project.Name}_Mockup_Image`}
@@ -169,12 +182,14 @@ const [project] = ProjectsList.filter(
                 )
             }
 
+            <!-- project description -->
             <p class="w-full text-justify text-[1.1em] mt-4 px-4 indent-12">
                 {project.Desc}
             </p>
         </div>
     </div>
 
+    <!-- feature section with feature title and description -->
     <SectionTitle title="Features" color="primary">
         <div
             class="grid grid-cols-1 md:grid-cols-2 gap-y-4 md:gap-y-6 md:gap-x-10 md:mx-4"
@@ -194,6 +209,7 @@ const [project] = ProjectsList.filter(
         </div>
     </SectionTitle>
 
+    <!--tech stack section with icon, title, and description -->
     <CenterTitle title="Tech Stack" color="secondary" />
     <div
         class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-2 mb-96 4xl:mb-[30rem]"

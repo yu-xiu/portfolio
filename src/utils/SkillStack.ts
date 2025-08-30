@@ -57,13 +57,15 @@ import {
     Latex,
     TensorFlow,
     Simulink,
-    AndroidStudio
+    AndroidStudio,
+    SHAP
 } from "../assets/Icons";
 import { GithubIcon } from "../assets/SVGs";
 
 export const MLFramework = [
     { name: "CoLaboratory", icon: Googlecolab, link: "https://colab.research.google.com/"},
     { name: "Jupyter", icon: Jupyter, link: "https://jupyter.org/"},
+    { name: "SHAP", icon: SHAP, link: "https://shap.readthedocs.io/en/latest/#"},
     { name: "Scikit-learn", icon: Scikitlearn, link: "https://scikit-learn.org/stable/"},
     { name: "TensorFlow", icon: TensorFlow, link: "https://www.tensorflow.org/"},
     { name: "PyTorch", icon: Pytorch, link: "https://pytorch.org/"},
@@ -121,7 +123,6 @@ export const ToolsStack = [
     { name: "GitHub", icon: GithubIcon, link: "https://github.com/" },
     { name: "Bitbucket", icon: Bitbucket, link: "https://www.atlassian.com/software/bitbucket"},
     { name: "Vite.js", icon: ViteIcon, link: "https://vitejs.dev/" },
-    { name: "NPM", icon: NpmIcon, link: "https://www.npmjs.com/" },
     { name: "VS Code", icon: VsCodeIcon, link: "https://code.visualstudio.com/"},
     { name: "AndroidStudio", icon: AndroidStudio, link: "https://developer.android.com/" },
     { name: "Figma", icon: FigmaIcon, link: "https://www.figma.com/" },

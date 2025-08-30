@@ -61,6 +61,8 @@ export { default as Scikitlearn } from "./scikit-learn.svg"
 export { default as Spacy } from "./spacy.svg"
 export { default as HuggingFace } from "./hugging-face.svg"
 export { default as TensorFlow } from "./tensorflow.svg"
+export { default as XGBoost } from "./XGBoost.svg"
+export { default as SHAP } from "./shap.svg"
 
 // Cloud-Devops
 export { default as Docker } from "./docker.svg"

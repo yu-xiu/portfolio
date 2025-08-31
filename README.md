@@ -19,7 +19,6 @@ The portfolio leverages the following technologies:
       <a href="https://preactjs.com/" title="Preact.js"><img src="https://raw.githubusercontent.com/ChiragChrg/ChiragChrg.github.io/main/icons/preactjs.svg" alt="Preact.js" width="40" height="40"/></a>&emsp;
       <a href="https://www.typescriptlang.org/docs/" title="TypeScript"><img src="https://skillicons.dev/icons?i=typescript" alt="TypeScript" width="40" height="40"/></a>&emsp;
       <a href="https://tailwindcss.com/docs/installation" title="TailwindCSS"><img src="https://skillicons.dev/icons?i=tailwind" alt="TailwindCSS" width="40" height="40"/></a>&emsp;
-      <a href="https://greensock.com/docs/" title="GSAP"><img src="https://raw.githubusercontent.com/ChiragChrg/ChiragChrg.github.io/main/icons/gsap.svg" alt="GSAP" width="40" height="40"/></a>&emsp;
 </div>
 
 
@@ -36,6 +35,7 @@ The portfolio leverages the following technologies:
 - 💼 Projects showcase
 - 📄 Resume/CV link
 - 📬 Tech stack
+- 📬 Work Experience
 
 ## 🚀 Installation and Setup
 1. Clone this repo

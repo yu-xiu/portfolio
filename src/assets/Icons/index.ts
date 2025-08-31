@@ -27,6 +27,7 @@ export { default as RestApiIcon } from "./database.svg"
 export { default as GdriveIcon } from "./gdrive.svg"
 export { default as NextAuthIcon } from "./nextauth.svg"
 export { default as EdgeStoreIcon } from "./edgestore.webp"
+export { default as FlaskIcon } from "./flask-name.svg"
 
 // Programming-Stack
 export { default as PythonIcon } from "./python.svg"

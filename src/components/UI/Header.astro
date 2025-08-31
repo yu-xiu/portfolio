@@ -15,7 +15,8 @@ import { Download } from "lucide-preact";
             <a class="Fade_Down" href="#about">ABOUT</a>
             <a class="Fade_Down" href="#skills">SKILLS</a>
             <a class="Fade_Down" href="#projects">PROJECTS</a>
-            <a class="Fade_Down" href="#contact">CONTACT</a>
+            <a class="Fade_Down" href="#experience">EXPERIENCE</a>
+            <a class="Fade_Down" href="#education">EDUCATION</a>
         </nav>
 
         <div class="flex_center gap-4">
@@ -35,6 +36,8 @@ import { Download } from "lucide-preact";
     </div>
 </header>
 
+
+
 <script is:inline type="module">
     const headerElement = document.getElementById("header");
     const sectionsList = {
@@ -42,13 +45,16 @@ import { Download } from "lucide-preact";
         "#about": document.getElementById("about"),
         "#skills": document.getElementById("skills"),
         "#projects": document.getElementById("projects"),
+        "#experience": document.getElementById("experience"),
+        "#education": document.getElementById("education"),
         "#contact": document.getElementById("contact"),
     };
 
     // Set Active class on section scroll
     const handleScroll = () => {
         for (const [linkHref, section] of Object.entries(sectionsList)) {
-            if (!section) return;
+            // if (!section) return;
+            if (!section) continue;
 
             const rect = section.getBoundingClientRect();
             const link = document.querySelector(

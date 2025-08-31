@@ -58,7 +58,8 @@ import {
     TensorFlow,
     Simulink,
     AndroidStudio,
-    SHAP
+    SHAP,
+    FlaskIcon
 } from "../assets/Icons";
 import { GithubIcon } from "../assets/SVGs";
 
@@ -105,6 +106,7 @@ export const BackendStack = [
     { name: "PHP", icon: PhpIcon, link: "https://www.php.net/" },
     { name: "REST API", icon: RestApiIcon, link: "https://developer.mozilla.org/en-US/docs/Glossary/REST" },
     { name: "Drive API", icon: GdriveIcon, link: "https://developers.google.com/drive" },
+    { name: "Flask", icon: FlaskIcon, link: "https://flask.palletsprojects.com/en/stable/"}
 ];
 
 export const ProgrammingStack = [

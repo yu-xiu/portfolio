@@ -100,7 +100,11 @@ const displayName = humanize(project.Name);
             {displayName}
         </h1>
 
-        <div class="w-full flex_center gap-4">
+        <!-- <div class="w-full flex_center gap-4"> -->
+        
+        <div class="w-full flex items-center justify-center
+             flex-wrap md:flex-nowrap
+             gap-2 sm:gap-3 md:gap-4">
             {
                 project?.Tech?.map((tech, index) => {
                     return (

@@ -1,17 +1,17 @@
 import {
-    PythonIcon, Scikitlearn, Googlecolab, XGBoost, SHAP, HtmlIcon, CssIcon, JsIcon, ReactIcon, NodeIcon, TsIcon, NextIcon, MysqlIcon, MongoIcon, GdriveIcon, SocketIoIcon, RestApiIcon, PhpIcon, ViteIcon, NextAuthIcon, ReduxIcon, TailwindIcon, ZustandIcon, AstroIcon, NanostoresIcon, D3JsIcon, ReactQueryIcon, EdgeStoreIcon
+    PythonIcon, Scikitlearn, Googlecolab, XGBoost, SHAP, VercelIcon, Heroku, HuggingFace, FlaskIcon, FigmaIcon, Spacy, HtmlIcon, CssIcon, JsIcon, ReactIcon, NodeIcon, TsIcon, NextIcon, MysqlIcon, MongoIcon, GdriveIcon, SocketIoIcon, RestApiIcon, PhpIcon, ViteIcon, NextAuthIcon, ReduxIcon, TailwindIcon, ZustandIcon, AstroIcon, NanostoresIcon, D3JsIcon, ReactQueryIcon, EdgeStoreIcon
 } from "../assets/Icons"
 
 import {
-    XAIEmotionLogo, NextmartLogo, ArmsLogo, ArmsPhpLogo, ClimateLogo, CovidtraxLogo, DaysbeyondLogo, FilmstackLogo, PikturesLogo, SrinivasLogo, XReconLogo, YoatubeLogo, VortexaLogo
+    XAIEmotionLogo, PoliLogo, NextmartLogo, ArmsLogo, ArmsPhpLogo, ClimateLogo, CovidtraxLogo, DaysbeyondLogo, FilmstackLogo, PikturesLogo, SrinivasLogo, XReconLogo, YoatubeLogo, VortexaLogo
 } from "../assets/Logos"
 
 import {
-    XAIEmotion, NextmartShots, Armsv1Shots, Armsv2Shots, ClimateShots, CovidTraxShots, DaysbeyondShots, FilmstackShots, PikturesShots, SrinivasShots, XreconShots, YoatubeShots, VortexaShots, Armsv3Shots
+    XAIEmotion, PoliShots, NextmartShots, Armsv1Shots, Armsv2Shots, ClimateShots, CovidTraxShots, DaysbeyondShots, FilmstackShots, PikturesShots, SrinivasShots, XreconShots, YoatubeShots, VortexaShots, Armsv3Shots
 } from "../assets/Shots"
 
 import {
-    XAIEmotionMockup, ARMSv1Mockup, ARMSv2Mockup, ARMSv3Mockup, ClimateMockup, DaysbeyondMockup, SrinivasMockup, VortexaMockup, XreconMockup, YoatubeMockup
+    XAIEmotionMockup, PoliMockup, ARMSv1Mockup, ARMSv2Mockup, ARMSv3Mockup, ClimateMockup, DaysbeyondMockup, SrinivasMockup, VortexaMockup, XreconMockup, YoatubeMockup
 } from "../assets/Mockup"
 
 
@@ -122,6 +122,36 @@ const TechInfo = {
         description: "JavaScript library for building user interfaces with reusable components.",
         icon: ReactIcon
     },
+    Figma: {
+        title: "Figma",
+        description: "Figma is a cloud-based design and prototyping tool for creating user interfaces for digital products like websites and apps, emphasizing real-time collaboration for teams. Key features include design, prototyping, and design system management.",
+        icon: FigmaIcon
+    },
+    Flask: {
+        title: "Flask",
+        description: "Flask is a lightweight WSGI web application framework. It is designed to make getting started quick and easy, with the ability to scale up to complex applications.",
+        icon: FlaskIcon
+    },
+    Spacy: {
+        title: "Spacy",
+        description: "spaCy is an open-source library for advanced Natural Language Processing (NLP) in Python.",
+        icon: Spacy 
+    },
+    HuggingFace: {
+        title: "HuggingFace",
+        description: "HuggingFace Transformers acts as the model-definition framework for state-of-the-art machine learning models in text, computer vision, audio, video, and multimodal model, for both inference and training.",
+        icon: HuggingFace
+    },
+    Vercel: {
+        title: "Vercel",
+        description: "Vercel is a cloud platform that provides the tools and infrastructure for developers to build, deploy, and scale modern web applications, focusing on speed, developer experience, and global distribution.",
+        icon: VercelIcon
+    },
+    Heroku: {
+        title: "Heroku",
+        description: "Heroku is a cloud Platform as a Service (PaaS) that enables developers to build, run, and manage modern applications in the cloud without needing to manage the underlying infrastructure.",
+        icon: Heroku
+    },
     Node: {
         title: "Node.js",
         description: "JavaScript runtime for server-side applications, enabling scalable and event-driven architecture.",
@@ -149,7 +179,7 @@ const TechInfo = {
     },
     GDrive: {
         title: "Google Drive API",
-        description: "RESTful API for integrating Google Drive functionalities such as file storage and synchronization into applications.",
+        description: "The Google Drive API enables developers to create applications that interact with Google Drive's cloud storage. This API allows for programmatic access to manage files and folders within a user's Google Drive.",
         icon: GdriveIcon
     },
     SocketIO: {
@@ -243,7 +273,7 @@ export const ProjectsList: ProjectsListType = [
         Status: "completed",
         Link: "https://github.com/yu-xiu/emotion-arousal-prediction-from-audio-explainable-AI",
         Source: "https://github.com/yu-xiu/emotion-arousal-prediction-from-audio-explainable-AI",
-        Tech: [TechInfo.Python, TechInfo.Scikitlearn, TechInfo.Colab, TechInfo.XGBoost, TechInfo.SHAP],
+        Tech: [TechInfo.Python, TechInfo.Scikitlearn, TechInfo.Colab, TechInfo.XGBoost, TechInfo.SHAP, TechInfo.GDrive],
         features: [
             {
                 title: "Exploratory Data Analysis (EDA)",
@@ -273,6 +303,56 @@ export const ProjectsList: ProjectsListType = [
             { title: "XAI-Emotion", version: "1" }
         ]
     },
+    {
+        Name: "Poli-NLP-Classifier",
+        ShortDesc: "Poli is a web application that allows users to input political posts and automatically classifies them into categories using natural language processing (NLP).",
+        Desc: "Team project (4). I led NLP modeling and the inference API; modeling and fine-tuned LSTM, and shipped a full-stack demo. I owned partial data cleaning; trained and fine-tuned an LSTM; built React UI (logo, input flow, animations); implemented Flask inference APIs (model loading & tokenization); deployed on Heroku (backend) and Vercel (frontend) with cost-efficient external model storage via Google Drive.",
+        Logo: PoliLogo,
+        Shot: PoliShots,
+        Mockup: PoliMockup,
+        Theme: "#FFF",
+        Status: "completed",
+        Link: "https://github.com/yu-xiu/Poli_AI_Classifier",
+        Source: "https://github.com/yu-xiu/Poli_AI_Classifier",
+        Tech: [TechInfo.GDrive, TechInfo.Figma, TechInfo.Python, TechInfo.Scikitlearn, TechInfo.Colab, TechInfo.HuggingFace, TechInfo.Spacy, TechInfo.React, TechInfo.Flask, TechInfo.HTML, TechInfo.CSS, TechInfo.Vercel, TechInfo.Heroku],
+        features: [
+            {
+              title: "Open-ended Input",
+              description: "Users can submit any political social media post; predictions are not limited to the training dataset."
+            },
+            {
+              title: "Bias Classification",
+              description: "Classifies posts as Neutral vs. Partisan using a fine-tuned BERT model."
+            },
+            {
+              title: "Message Type Classification",
+              description: "Predicts one of: Attack, Constituency, Information, Media, Mobilization, Personal, Policy, Support."
+            },
+            {
+              title: "Robust Preprocessing",
+              description: "Removes URLs, emojis, HTML tags, and special characters via regex & NLP; includes tokenization and TF-IDF."
+            },
+            {
+              title: "Modeling Options",
+              description: "Trained and fine-tuned LSTM, GPT-2, and BERT; the production demo uses BERT for best performance."
+            },
+            {
+              title: "Generalization",
+              description: "Trained on the 2015 Crowdflower Political Social Media Posts dataset and generalizes to unseen inputs."
+            },
+            {
+              title: "Full-stack Demo",
+              description: "React frontend integrated with Flask APIs for real-time inference and results visualization."
+            }
+        ],
+          
+        hideProject: false,
+        LogoSize: 50,
+        versions: [
+            { title: "Poli-NLP-Classifier", version: "1" }
+        ]
+    },
+    
     // {
     //     Name: "Vortexa",
     //     ShortDesc: "Stay informed about current conditions, forecasts, and astronomical data, and gain valuable insights into current weather patterns and trends.",

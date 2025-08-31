@@ -288,7 +288,7 @@ export const ProjectsList: ProjectsListType = [
                 description: "Applies GridSearchCV for hyperparameter tuning to improve predictive performance."
             },
             {
-                title: "Explainable AI",
+                title: "Explainable AI (XAI)",
                 description: "Uses SHAP to provide feature importance and explain model decisions."
             },
             {

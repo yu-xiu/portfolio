@@ -7,6 +7,10 @@ import {
 import { SubCenterTitle } from "./UI"
 
 const currentYear = new Date().getFullYear();
+
+import { VISITOR_ID } from "../../config/visitorId.js";
+const badgeUrl = `https://visitor-badge.laobi.icu/badge?page_id=${VISITOR_ID}`;
+const isProd = import.meta.env.MODE === "production";
 ---
 
 <SubCenterTitle title="T" color="primary" class="text-sm"/>
@@ -30,6 +34,13 @@ const currentYear = new Date().getFullYear();
     <p class="text-xs text-gray-400 mt-1">
         Template adapted from <a href="https://github.com/ChiragChrg/portfolio" target="_blank" rel="noopener noreferrer">
             ChiragChrg
-    </a> (MIT License)
-  </p>
+        </a> (MIT License)
+    </p>
+
+    <!-- Visitor counter ID is stored in config/visitorId.js (ignored by git).
+     Please create your own file with a unique ID if you fork this repo. -->
+    
+    {isProd && (
+        <img src={badgeUrl} alt="visitors" />
+    )}
 </footer>

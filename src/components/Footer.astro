@@ -8,8 +8,6 @@ import { SubCenterTitle } from "./UI"
 
 const currentYear = new Date().getFullYear();
 
-import { VISITOR_ID } from "../../config/visitorId.js";
-const badgeUrl = `https://visitor-badge.laobi.icu/badge?page_id=${VISITOR_ID}`;
 const isProd = import.meta.env.MODE === "production";
 ---
 
@@ -37,10 +35,14 @@ const isProd = import.meta.env.MODE === "production";
         </a> (MIT License)
     </p>
 
-    <!-- Visitor counter ID is stored in config/visitorId.js (ignored by git).
-     Please create your own file with a unique ID if you fork this repo. -->
+    <!-- Visitor counter ID is loaded from .env file.
+     Add PUBLIC_VISITOR_ID=your-own-id in your .env file when forking. -->
     
     {isProd && (
-        <img src={badgeUrl} alt="visitors" />
+        <img 
+            src={`https://visitor-badge.laobi.icu/badge?page_id=${import.meta.env.PUBLIC_VISITOR_ID}`} 
+            alt="visitors" 
+        />
+
     )}
 </footer>

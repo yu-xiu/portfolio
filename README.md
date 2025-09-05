@@ -4,8 +4,9 @@
 ##### Created : 08/24/2025
 
 # Tiffany Xiu - Personal Portfolio
-Welcome to Tiffany's portfolio website.
-<img src="src/assets/my-portfolio-sh.png" alt="Alt text" width="200"/>
+Welcome to Tiffany's portfolio website. 
+<br/>
+<img src="src/assets/my-portfolio-sh.png" alt="Alt text" width="300"/>
 
 This is my personal developer portfolio website showcasing my projects, skills, and experiences.  
 🌐 Live Demo: [Tiffany Portfolio](https://tiffanyxiu.vercel.app/)

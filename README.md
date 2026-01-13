@@ -6,7 +6,9 @@
 # Tiffany Xiu - Personal Portfolio
 Welcome to Tiffany's portfolio website. 
 <br/>
-<img src="src/assets/my-portfolio-sh.png" alt="portfolio_home" width="300"/>
+<!-- <img src="src/assets/my-portfolio-sh.png" alt="portfolio_home" width="300"/> -->
+[<img src="src/assets/my-portfolio-sh.png" alt="portfolio_home" width="300" />](https://tiffanyxiu.vercel.app/)
+
 
 This is my personal developer portfolio website showcasing my projects, skills, and experiences.  
 🌐 Live Demo: [Tiffany Portfolio](https://tiffanyxiu.vercel.app/)

@@ -30,7 +30,7 @@ The portfolio leverages the following technologies:
 - **Optimized Performance**: Built with Astro for lightning-fast load times.
 - **Responsive Design**: Tailored for all devices using TailwindCSS.
 - **Interactive Animations**: Powered by GSAP for smooth transitions.
-- **SEO Friendly**: Enhanced visibility with Astro SEO integration.
+- **SEO (search engine optimization) Friendly**: Enhanced visibility with Astro SEO integration.
 - **Dynamic Components**: Utilizes Preact for modular and reusable UI elements.
 
 ## 🌟 Features

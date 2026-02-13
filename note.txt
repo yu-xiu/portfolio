@@ -24,3 +24,37 @@ live demo backup in [projectID].astro after source code link
     <ExternalLinkIcon />
     <span>Live Demo</span>
 </a>
+
+----------------------
+How to add projects：
+Files needs to be modified:
+src/utils/ProjectsList.ts  -> Add project data
+src/assets/Shots/index.ts  -> Project screenshot
+src/assets/Logos/index.ts  -> Project Logos
+
+src/assets/Shots/          -> Add project Shots (.webp/.png)
+src/assets/Logos/          -> Add project Logos (.svg/.png)
+src/assets/Mockup/         -> Mockup images
+
+添加新项目步骤：
+
+1. 准备项目截图和 Logo 图片，分别放到 src/assets/Shots/, src/assets/Logos/, src/assets/Mockup/ 文件夹。
+    1.1 如何制作mockup：
+        首先 在Canva上创建free mockup pages - laptop and phone
+        https://www.canva.com/design/DAHBPfMS1Pk/RaYtsstoHODWii0cgqOZ1w/edit?ui=eyJFIjp7IkE_IjoiTiIsIlMiOiJNb2NrdXBzIn19
+        https://www.canva.com/mockups/ (这也是 smartmockups.com)
+
+        然后点击 share - download 存储
+
+        再次 用figma design new draft - 把laptop和phone mockup拼接在同一个画面
+        最后 截图figma拼图 - png file - convert png to webp
+        然后将做好的mockup webp file导入到assets/Mockup folder 中
+
+2. 在 src/assets/Shots/index.ts 中添加导出：export { default as MyProjectShots } from "./MyProject.webp";
+
+3. 在 src/assets/Logos/index.ts 中添加导出：export { default as MyProjectLogo } from "./MyProjectLogo.svg";
+4. 在 src/assets/Mockup/index.ts 中添加导出：export { default as MyProjectMockup } from "./MyProjectLogo.webp";
+
+4. 在 src/utils/ProjectsList.ts 文件中，先在顶部 import 语句里引入刚导出的图片，然后在 ProjectsList 数组中添加项目对象，包含 Name、ShortDesc、Desc、Logo、Shot、Theme、Status、Link、Source、Tech、features、hideProject、LogoSize 等字段。
+5. 在 src/assets/pages/porjects/[projectID].astro 加入param 注意小写
+

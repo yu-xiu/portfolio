@@ -1,17 +1,18 @@
+// Add projects in this file
 import {
     PythonIcon, Scikitlearn, Googlecolab, XGBoost, SHAP, VercelIcon, Heroku, HuggingFace, FlaskIcon, FigmaIcon, Spacy, HtmlIcon, CssIcon, JsIcon, ReactIcon, NodeIcon, TsIcon, NextIcon, MysqlIcon, MongoIcon, GdriveIcon, SocketIoIcon, RestApiIcon, PhpIcon, ViteIcon, NextAuthIcon, ReduxIcon, TailwindIcon, ZustandIcon, AstroIcon, NanostoresIcon, D3JsIcon, ReactQueryIcon, EdgeStoreIcon
 } from "../assets/Icons"
 
 import {
-    XAIEmotionLogo, PoliLogo, NextmartLogo, ArmsLogo, ArmsPhpLogo, ClimateLogo, CovidtraxLogo, DaysbeyondLogo, FilmstackLogo, PikturesLogo, SrinivasLogo, XReconLogo, YoatubeLogo, VortexaLogo
+    XAIEmotionLogo, PoliLogo, DaVQiLogo
 } from "../assets/Logos"
 
 import {
-    XAIEmotion, PoliShots, NextmartShots, Armsv1Shots, Armsv2Shots, ClimateShots, CovidTraxShots, DaysbeyondShots, FilmstackShots, PikturesShots, SrinivasShots, XreconShots, YoatubeShots, VortexaShots, Armsv3Shots
+    XAIEmotion, PoliShots, DaVQiShots
 } from "../assets/Shots"
 
 import {
-    XAIEmotionMockup, PoliMockup, ARMSv1Mockup, ARMSv2Mockup, ARMSv3Mockup, ClimateMockup, DaysbeyondMockup, SrinivasMockup, VortexaMockup, XreconMockup, YoatubeMockup
+    XAIEmotionMockup, PoliMockup, DaVQiMockup
 } from "../assets/Mockup"
 
 
@@ -25,7 +26,7 @@ type ProjectsListType = {
     Theme: string,
     Status: string,
     Link: string,
-    Source: string,
+    Source?: string,
     Demo?: {
         email: string,
         password: string
@@ -47,34 +48,6 @@ type ProjectsListType = {
     }[]
 }[]
 
-// -- PROJECTS TEMPLATE --
-// {
-//     Name: "TITLE",
-//     ShortDesc: "SHORT_DESCRIPTION",
-//     Desc: "DESCRIPTION",
-//     Logo: LOGO_URL,
-//     Shot: SCREENSHOT_URL,
-//     Mockup: MOCKUP_URL,
-//     Theme: "PROJECT_THEME_COLOR_HEX",
-//     Status: "completed OR development",
-//     Link: "PROJECT_URL",
-//     Source: "GITHUB_URL",
-//     Demo?: { 
-//         email: "DEMO_EMAIL", 
-//         password: "DEMO_PASSWORD" 
-//     },
-//     Tech: [TECH_ICONS_URL],
-//     features: [{
-//         title: "FEATURE_TITLE",
-//         description: "FEATURE_DESCRIPTION"
-//     }],
-//     hideProject: false,
-//     LogoSize: 50,
-//     versions: [{ 
-//         title: "PREV_PROJECT_TITLE", 
-//         version: "VERSION_NO" 
-//     }]
-// },
 
 const TechInfo = {
     Python: {
@@ -261,7 +234,33 @@ const FeatureList = {
     }
 }
 
+// Add projects to the project list
 export const ProjectsList: ProjectsListType = [
+    {
+        Name: "DaVQi-EducationAI",
+        ShortDesc: "AI-powered K–12 science practice with instant short-answer feedback and misconception detection for students and homeschool families.",
+        Desc: "An AI-powered science practice companion for K–12 and homeschool learners. Students get targeted practice questions across key topics and receive instant, rubric-style feedback on short answers—not just right or wrong, but why. The system analyzes responses to identify misconceptions, highlights missing concepts, and provides actionable hints and explanations tailored to the student’s level. Parents and educators can track progress over time with clear summaries of strengths, weak areas, and recommended next practice. Designed for quick daily practice, review before tests, and guided homeschooling sessions—making science learning more efficient, engaging, and confidence-building.",
+        Logo: DaVQiLogo,
+        Shot: DaVQiShots,
+        Mockup: DaVQiMockup,
+        Theme: "#FFF",
+        Status: "completed",
+        Link: "https://davqi.ai/",
+        Source: "",
+        Tech: [TechInfo.Python, TechInfo.Scikitlearn, TechInfo.HuggingFace, TechInfo.Spacy, TechInfo.React, TechInfo.Flask, TechInfo.HTML, TechInfo.CSS, TechInfo.Vercel, TechInfo.Colab, TechInfo.SHAP, TechInfo.Figma],
+        features: [
+            {
+                title: "Exploratory Data Analysis (EDA)",
+                description: "Checked null values and class distribution. Visualized answer length, label imbalance, and common words"
+            }
+           
+        ],
+        hideProject: false,
+        LogoSize: 50,
+        versions: [
+            { title: "DaVQi-EducationAI", version: "1" }
+        ]
+    },
     {
         Name: "XAI-Emotion",
         ShortDesc: "Predicts emotional arousal from audio features using machine learning, with SHAP-based explanations of feature importance.",

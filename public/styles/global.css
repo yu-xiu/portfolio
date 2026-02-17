@@ -65,3 +65,60 @@ input:-webkit-autofill:active {
     -webkit-text-fill-color: var(--text) !important;
     transition: background-color 999999s ease-in-out 0s;
 }
+
+/* ===== UI Enhancements ===== */
+
+/* Hero background grid pattern */
+#Hero {
+    background-image: 
+        linear-gradient(var(--base), var(--base)),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px);
+    background-size: 100% 100%, 60px 60px, 60px 60px;
+}
+
+/* Project card hover effects */
+.Card_Main {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.Card_Main:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+.Card_Main:hover .Card_Image {
+    opacity: 0.8 !important;
+}
+
+/* Social icon hover effects */
+a[aria-label="GitHub"],
+a[aria-label="LinkedIn"] {
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+a[aria-label="GitHub"]:hover,
+a[aria-label="LinkedIn"]:hover {
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 10px hsl(var(--primary) / 0.6));
+}
+
+/* Scroll progress bar */
+.scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 3px;
+    background: linear-gradient(90deg, hsl(var(--primary)), hsl(var(--secondary)));
+    z-index: 9999;
+    transition: width 0.1s ease-out;
+}
+
+/* Skill card hover effect */
+.Fade_Up:hover {
+    transform: translateY(-2px);
+}
+
+/* Section divider gradient */
+.section-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.3), transparent);
+    margin: 2rem 0;
+}

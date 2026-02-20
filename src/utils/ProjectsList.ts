@@ -298,7 +298,7 @@ export const ProjectsList: ProjectsListType = [
         Mockup: XAIEmotionMockup,
         Theme: "#FFF",
         Status: "completed",
-        Link: "https://github.com/yu-xiu/emotion-arousal-prediction-from-audio-explainable-AI",
+        Link: "",
         Source: "https://github.com/yu-xiu/emotion-arousal-prediction-from-audio-explainable-AI",
         Tech: [TechInfo.Python, TechInfo.Scikitlearn, TechInfo.Colab, TechInfo.XGBoost, TechInfo.SHAP, TechInfo.GDrive],
         features: [
@@ -339,7 +339,7 @@ export const ProjectsList: ProjectsListType = [
         Mockup: PoliMockup,
         Theme: "#FFF",
         Status: "completed",
-        Link: "https://github.com/yu-xiu/Poli_AI_Classifier",
+        Link: "",
         Source: "https://github.com/yu-xiu/Poli_AI_Classifier",
         Tech: [TechInfo.GDrive, TechInfo.Figma, TechInfo.Python, TechInfo.Scikitlearn, TechInfo.Colab, TechInfo.HuggingFace, TechInfo.Spacy, TechInfo.React, TechInfo.Flask, TechInfo.HTML, TechInfo.CSS, TechInfo.Vercel, TechInfo.Heroku],
         features: [

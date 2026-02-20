@@ -321,8 +321,13 @@ export const ProjectsList: ProjectsListType = [
             {
                 title: "Interactive Analysis",
                 description: "Visualizes prediction outputs and feature contributions for transparent interpretation."
-            },
-           
+            }
+        ],
+        contributions: [
+            "Conducted exploratory data analysis (EDA) on audio-derived features using correlation heatmaps and scatter plots to identify top 10 key features of emotional arousal",
+            "Built and compared four regression models (Linear Regression, Random Forest, XGBoost, MLP); selected MLP as final model based on R² score",
+            "Tuned hyperparameters using GridSearchCV; observed limited gains on small dataset, highlighting the importance of model simplicity and data size",
+            "Applied SHAP (SHapley Additive Explanations) to interpret MLP predictions and identify the most influential features affecting arousal scores"
         ],
         hideProject: false,
         LogoSize: 50,
@@ -372,7 +377,13 @@ export const ProjectsList: ProjectsListType = [
               description: "React frontend integrated with Flask APIs for real-time inference and results visualization."
             }
         ],
-          
+        contributions: [
+            "Preprocessed textual data by removing extraneous characters, tokenizing, and generating sequences for model training",
+            "Developed and trained a bidirectional Long Short-Term Memory (Bi-LSTM) model using TensorFlow and Keras API, optimizing performance based on F1-score and saving the best model weights",
+            "Built a full-stack web application with React.js (frontend) and Flask (backend) to classify political media posts",
+            "Designed a responsive and interactive user interface using JavaScript, CSS, and Bootstrap, allowing users to input political posts and view classification results dynamically",
+            "Implemented API integration to send user input to the backend for processing and retrieve real-time classification results"
+        ],
         hideProject: false,
         LogoSize: 50,
         versions: [

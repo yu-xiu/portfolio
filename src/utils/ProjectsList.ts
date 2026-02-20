@@ -40,6 +40,7 @@ type ProjectsListType = {
         title: string,
         description: string
     }[],
+    contributions?: string[],
     hideProject: boolean,
     LogoSize: number,
     versions?: {
@@ -250,10 +251,37 @@ export const ProjectsList: ProjectsListType = [
         Tech: [TechInfo.Python, TechInfo.Scikitlearn, TechInfo.HuggingFace, TechInfo.Spacy, TechInfo.React, TechInfo.Flask, TechInfo.HTML, TechInfo.CSS, TechInfo.Vercel, TechInfo.Colab, TechInfo.SHAP, TechInfo.Figma],
         features: [
             {
-                title: "Exploratory Data Analysis (EDA)",
-                description: "Checked null values and class distribution. Visualized answer length, label imbalance, and common words"
+                title: "Instant AI Feedback",
+                description: "Students receive rubric-style feedback on short answers instantly—not just right or wrong, but detailed explanations of why."
+            },
+            {
+                title: "Misconception Detection",
+                description: "AI analyzes responses to identify common misconceptions (e.g., confusing mass vs. weight) and provides targeted corrections."
+            },
+            {
+                title: "Adaptive Learning",
+                description: "Questions and hints are tailored to the student's level, making learning more personalized and effective."
+            },
+            {
+                title: "Progress Tracking",
+                description: "Parents and educators can track progress with clear summaries of strengths, weak areas, and recommended next steps."
+            },
+            {
+                title: "K-12 Science Coverage",
+                description: "Comprehensive practice questions across key science topics for elementary through high school students."
+            },
+            {
+                title: "Homeschool Friendly",
+                description: "Designed for quick daily practice, test review, and guided homeschooling sessions."
             }
-           
+        ],
+        contributions: [
+            "Led end-to-end product development from concept to launch",
+            "Built NLP pipeline for short-answer grading and misconception detection",
+            "Designed and implemented the feedback rubric system",
+            "Developed React frontend with responsive UI/UX",
+            "Created Flask backend APIs for real-time inference",
+            "Deployed and maintained production environment on Vercel"
         ],
         hideProject: false,
         LogoSize: 50,

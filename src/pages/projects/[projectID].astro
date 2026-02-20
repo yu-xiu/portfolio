@@ -123,13 +123,24 @@ const displayName = humanize(project.Name);
             }
         </div>
 
-        <div class="flex_center gap-4 text-[1em]">
+        <div class="flex_center gap-4 text-[1em] flex-wrap">
+            {project.Link && (
+                <a
+                    href={project.Link}
+                    target="_blank"
+                    rel="noreferrer"
+                    class="Fade_Stagger flex_center gap-2 bg-gradient-to-r from-primary to-secondary px-5 py-2.5 rounded-full font-medium hover:scale-105 transition-transform shadow-lg"
+                >
+                    <ExternalLinkIcon size={20} />
+                    <span>Live Demo</span>
+                </a>
+            )}
             {project.Source && (
                 <a
                     href={project.Source}
                     target="_blank"
                     rel="author"
-                    class="Fade_Stagger flex_center gap-2 bg-LinkBtnGradient px-4 py-2 rounded"
+                    class="Fade_Stagger flex_center gap-2 bg-LinkBtnGradient px-5 py-2.5 rounded-full border border-primary/30 hover:border-primary/60 transition-colors"
                 >
                     <svg
                         stroke="currentColor"
@@ -137,8 +148,8 @@ const displayName = humanize(project.Name);
                         stroke-width="0"
                         viewBox="0 0 16 16"
                         color="#fff"
-                        height="24"
-                        width="24"
+                        height="20"
+                        width="20"
                         xmlns="http://www.w3.org/2000/svg"
                         style="color: var(--heroSocialColor);"
                     >
@@ -236,6 +247,22 @@ const displayName = humanize(project.Name);
             }
         </div>
     </SectionTitle>
+
+    <!-- What I Built section -->
+    {project.contributions && project.contributions.length > 0 && (
+        <SectionTitle title="What I Built" color="secondary">
+            <div class="max-w-3xl mx-auto">
+                <ul class="space-y-4">
+                    {project.contributions.map((item) => (
+                        <li class="Fade_Up flex items-start gap-4 p-4 bg-skillGradientAlt rounded-lg border border-secondaryLiteAlt/30 hover:border-secondary/50 transition-colors">
+                            <span class="text-secondary text-xl mt-0.5">▹</span>
+                            <span class="text-lg">{item}</span>
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        </SectionTitle>
+    )}
 
     <!--tech stack section with icon, title, and description -->
     <CenterTitle title="Tech Stack" color="secondary" />

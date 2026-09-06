@@ -25,17 +25,13 @@ img {
     cursor: text;
 }
 
-@keyframes gradientPan {
-    from {
-        background-position: 0% center;
-    }
-
-    to {
-        background-position: -200% center;
-    }
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+    -webkit-text-fill-color: var(--text) !important;
+    transition: background-color 999999s ease-in-out 0s;
 }
-
-/* Disable blue button click highlight */
 input,
 button,
 a,
@@ -58,14 +54,6 @@ div {
     background-clip: content-box;
 }
 
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-    -webkit-text-fill-color: var(--text) !important;
-    transition: background-color 999999s ease-in-out 0s;
-}
-
 /* ===== UI Enhancements ===== */
 
 /* Hero background grid pattern */
@@ -77,27 +65,23 @@ input:-webkit-autofill:active {
     background-size: 100% 100%, 60px 60px, 60px 60px;
 }
 
-/* Project card hover effects */
+/* Project card hover */
 .Card_Main {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 .Card_Main:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-}
-.Card_Main:hover .Card_Image {
-    opacity: 0.8 !important;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
 }
 
 /* Social icon hover effects */
 a[aria-label="GitHub"],
 a[aria-label="LinkedIn"] {
-    transition: transform 0.3s ease, filter 0.3s ease;
+    transition: opacity 0.2s ease;
 }
 a[aria-label="GitHub"]:hover,
 a[aria-label="LinkedIn"]:hover {
-    transform: scale(1.2);
-    filter: drop-shadow(0 0 10px hsl(var(--primary) / 0.6));
+    opacity: 0.7;
 }
 
 /* Scroll progress bar */
@@ -111,10 +95,6 @@ a[aria-label="LinkedIn"]:hover {
     transition: width 0.1s ease-out;
 }
 
-/* Skill card hover effect */
-.Fade_Up:hover {
-    transform: translateY(-2px);
-}
 
 /* Section divider gradient */
 .section-divider {

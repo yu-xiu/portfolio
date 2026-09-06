@@ -12,13 +12,13 @@ type Props = {
 const { stack }: Props = Astro.props;
 ---
 
-<div class="Fade_Up grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
+<div class="Fade_Up grid grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-x-4 gap-y-8">
     {
         stack.map((obj) => (
             <a
                 href={obj.link}
                 title={obj.name}
-                class="Fade_Stagger flex_center flex-col gap-2 min-w-24 aspect-square rounded-lg bg-skillGradient"
+                class="Fade_Stagger flex_center flex-col gap-2 py-2 opacity-80 hover:opacity-100 transition-opacity"
                 target="_blank"
                 rel="noreferrer"
             >

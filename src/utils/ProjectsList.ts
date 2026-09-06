@@ -248,7 +248,7 @@ export const ProjectsList: ProjectsListType = [
         Status: "completed",
         Link: "https://davqi.ai/",
         Source: "",
-        Tech: [TechInfo.Python, TechInfo.Scikitlearn, TechInfo.HuggingFace, TechInfo.Spacy, TechInfo.React, TechInfo.Flask, TechInfo.HTML, TechInfo.CSS, TechInfo.Vercel, TechInfo.Colab, TechInfo.SHAP, TechInfo.Figma],
+        Tech: [TechInfo.Python, TechInfo.HuggingFace, TechInfo.Spacy, TechInfo.React, TechInfo.Flask],
         features: [
             {
                 title: "Instant AI Feedback",
@@ -300,7 +300,7 @@ export const ProjectsList: ProjectsListType = [
         Status: "completed",
         Link: "",
         Source: "https://github.com/yu-xiu/emotion-arousal-prediction-from-audio-explainable-AI",
-        Tech: [TechInfo.Python, TechInfo.Scikitlearn, TechInfo.Colab, TechInfo.XGBoost, TechInfo.SHAP, TechInfo.GDrive],
+        Tech: [TechInfo.Python, TechInfo.Scikitlearn, TechInfo.XGBoost, TechInfo.SHAP],
         features: [
             {
                 title: "Exploratory Data Analysis (EDA)",
@@ -346,7 +346,7 @@ export const ProjectsList: ProjectsListType = [
         Status: "completed",
         Link: "",
         Source: "https://github.com/yu-xiu/Poli_AI_Classifier",
-        Tech: [TechInfo.GDrive, TechInfo.Figma, TechInfo.Python, TechInfo.Scikitlearn, TechInfo.Colab, TechInfo.HuggingFace, TechInfo.Spacy, TechInfo.React, TechInfo.Flask, TechInfo.HTML, TechInfo.CSS, TechInfo.Vercel, TechInfo.Heroku],
+        Tech: [TechInfo.Python, TechInfo.HuggingFace, TechInfo.React, TechInfo.Flask],
         features: [
             {
               title: "Open-ended Input",

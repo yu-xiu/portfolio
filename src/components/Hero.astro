@@ -1,8 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import Avatar_180 from "../Avatar_180.webp";
-import Avatar_250 from "../Avatar_250.webp";
-import Avatar_s from "../Avatar_s.webp"
+import Avatar_westie from "../Avatar_westie.webp"
 ---
 
 <section
@@ -11,18 +9,18 @@ import Avatar_s from "../Avatar_s.webp"
 >
     <!-- Hero Intro Info -->
     <div class="w-full lg:w-fit flex justify-start items-center flex-col gap-8">
-        <div class="text-[18px] lg:text-[26px] text-center lg:text-left">
+        <div class="text-[16px] sm:text-[18px] lg:text-[26px] text-center lg:text-left px-1">
             <p class="Fade_Stagger">Hi, I'm</p>
             <h1
-                class="Fade_Stagger gradientText font-ubuntu text-[4em] lg:text-[9rem] leading-tight"
+                class="Fade_Stagger gradientText font-ubuntu text-[3.4em] sm:text-[4em] lg:text-[9rem] leading-tight"
             >
                 Tiffany.
             </h1>
             <p class="Fade_Stagger">
                 I design and build AI-powered products.
             </p>
-            <p class="Fade_Stagger">
-                NLP • RAG • Generative AI • Explainable RL 
+            <p class="Fade_Stagger leading-relaxed">
+                NLP • RAG • Generative AI • Explainable RL
             </p>
             <p class="Fade_Stagger">
                 I turn ideas into shipped experiences.
@@ -33,14 +31,14 @@ import Avatar_s from "../Avatar_s.webp"
         <div class="Fade_Stagger flex flex-wrap justify-center lg:justify-start gap-4 mt-2">
             <a 
                 href="#projects" 
-                class="px-6 py-3 bg-primary text-white rounded-full font-medium hover:scale-105 transition-transform duration-300 shadow-lg hover:shadow-primary/50"
+                class="px-6 py-3 bg-primary text-white rounded-full font-medium hover:opacity-90 transition-opacity duration-200"
             >
                 View My Work
             </a>
             <a 
                 href="/yu_xiu_resume.pdf" 
                 target="_blank"
-                class="px-6 py-3 border-2 border-primary text-primary rounded-full font-medium hover:bg-primary hover:text-white transition-all duration-300"
+                class="px-6 py-3 border border-white/25 text-white rounded-full font-medium hover:border-white/50 transition-colors duration-200"
             >
                 Resume
             </a>
@@ -102,35 +100,14 @@ import Avatar_s from "../Avatar_s.webp"
         </div>
     </div>
 
-    <!-- Hero Orbit Animation -->
-    <div
-        class="Hero_Orbit relative flex_center w-[360px] lg:w-[500px] aspect-square"
-    >
-        <div
-            class="Spring_Up flex_center w-[50%] aspect-square rounded-full z-10"
-        >
-            <Image
-                src={Avatar_s}
-                alt="Hero_Avatar"
-                class="object-cover rounded-full"
-                width="250"
-                height="180"
-                srcset={`${Avatar_s.src} 180w, ${Avatar_s.src} 250w`}
-                sizes="(max-width: 640px) 180px, 250px"
-                loading="eager"
-            />
-        </div>
-        <div class="Spring_Up Hero_Trail Trail1">
-            <span class="Orbit_Dot"></span>
-        </div>
-        <div class="Spring_Up Hero_Trail Trail2">
-            <span class="Orbit_Dot"></span>
-        </div>
-        <div class="Spring_Up Hero_Trail Trail3">
-            <span class="Orbit_Dot"></span>
-        </div>
-        <div class="Spring_Up Hero_Trail Trail4">
-            <span class="Orbit_Dot"></span>
-        </div>
+    <div class="Spring_Up flex_center w-[200px] lg:w-[280px]">
+        <Image
+            src={Avatar_westie}
+            alt="Tiffany with her Westie"
+            class="w-full h-auto"
+            width="280"
+            height="280"
+            loading="eager"
+        />
     </div>
 </section>

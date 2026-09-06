@@ -63,6 +63,21 @@ import {
 } from "../assets/Icons";
 import { GithubIcon } from "../assets/SVGs";
 
+export const CoreStack = [
+    { name: "Python", icon: PythonIcon, link: "https://www.python.org/" },
+    { name: "PyTorch", icon: Pytorch, link: "https://pytorch.org/" },
+    { name: "TensorFlow", icon: TensorFlow, link: "https://www.tensorflow.org/" },
+    { name: "HuggingFace", icon: HuggingFace, link: "https://huggingface.co/" },
+    { name: "spaCy", icon: Spacy, link: "https://spacy.io/" },
+    { name: "SHAP", icon: SHAP, link: "https://shap.readthedocs.io/en/latest/#" },
+    { name: "Scikit-learn", icon: Scikitlearn, link: "https://scikit-learn.org/stable/" },
+    { name: "MATLAB", icon: MatLab, link: "https://www.mathworks.com/products/matlab.html" },
+    { name: "TypeScript", icon: TsIcon, link: "https://www.typescriptlang.org/" },
+    { name: "React", icon: ReactIcon, link: "https://react.dev/" },
+    { name: "Flask", icon: FlaskIcon, link: "https://flask.palletsprojects.com/en/stable/" },
+    { name: "Docker", icon: Docker, link: "https://www.docker.com/" },
+];
+
 export const MLFramework = [
     { name: "CoLaboratory", icon: Googlecolab, link: "https://colab.research.google.com/"},
     { name: "Jupyter", icon: Jupyter, link: "https://jupyter.org/"},

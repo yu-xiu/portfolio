@@ -3,13 +3,9 @@ type Props = {
     title: string;
     color?: "primary" | "secondary";
 };
-const { title, color }: Props = Astro.props;
+const { title }: Props = Astro.props;
 ---
 
-<div
-    class={`Fade_Up Title-Tag Title_Line relative flex_center text-[1.5em] ${color}`}
->
-    
+<div class="Fade_Up flex_center text-[1.05em] tracking-wide opacity-70 mt-6">
     <p>{title}</p>
-    
 </div>

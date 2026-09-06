@@ -7,15 +7,15 @@ const transitions = {
     SpringUp: {
         from: {
             opacity: 0,
-            scale: 0.75,
+            scale: 0.96,
         },
         to: {
-            ease: "elastic.out(0.6,0.14)",
+            ease: "power2.out",
             opacity: 1,
             scale: 1,
-            duration: 4.25,
-            delay: 1.25,
-            stagger: 0.15,
+            duration: 0.8,
+            delay: 0.15,
+            stagger: 0.1,
             scrollTrigger: {
                 trigger: '.Spring_Up',
             }

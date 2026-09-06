@@ -1,322 +1,129 @@
 ---
-// provides Astro with the list of all possible route parameters
-// projects 单独project界面里的body部分的排布
-// 设计包括单独project的info section logo, name, tech stack, source code, demo; about the project, features, tech stack的单独介绍
-// contains layout and settings of the body section of each project page
-// ProjectLayout will wrap the body 
-// utilize projectList and ProjectLayout
-
 export function getStaticPaths() {
     return [
         { params: { projectID: "xai-emotion" } },
         { params: { projectID: "poli-nlp-classifier" } },
-        { params: {projectID: "davqi-educationai"}},
-
-
-        /*{ params: { projectID: "arms-v3" } },
-        { params: { projectID: "vortexa" } },
-        { params: { projectID: "next-mart" } },
-        { params: { projectID: "arms-v2" } },
-        { params: { projectID: "xrecon" } },
-        { params: { projectID: "yoatube" } },
-        { params: { projectID: "srinivas-exam-manager" } },
-        { params: { projectID: "piktures" } },
-        { params: { projectID: "days-beyond" } },
-        { params: { projectID: "arms-v1" } },
-        { params: { projectID: "film-stack" } },
-        { params: { projectID: "covidtrax" } },
-        { params: { projectID: "climate" } },*/
-       
+        { params: { projectID: "davqi-educationai" } },
     ];
 }
 const { projectID } = Astro.params;
 
 import { Image } from "astro:assets";
 import { ProjectLayout } from "../../layouts";
-import { CheckIcon, ClipboardCopyIcon, ExternalLinkIcon } from "lucide-preact";
-import { CenterTitle, SectionTitle } from "../../components/UI";
-
-
+import { ExternalLinkIcon } from "lucide-preact";
 
 const { ProjectsList } = await import("../../utils/ProjectsList");
 
 const slugify = (s?: string) =>
-  s?.toString()
-    .normalize('NFKC')
-    .toLowerCase()
-    .trim()
-    .replace(/\p{Pd}/gu, '-')   
-    .replace(/[_\s]+/g, '-')    
-    .replace(/-+/g, '-')        
-    .replace(/^-|-$/g, '');     
+    s?.toString()
+        .normalize("NFKC")
+        .toLowerCase()
+        .trim()
+        .replace(/\p{Pd}/gu, "-")
+        .replace(/[_\s]+/g, "-")
+        .replace(/-+/g, "-")
+        .replace(/^-|-$/g, "");
 
 const project = ProjectsList.find(
-  (itm) => slugify(itm.Name) === slugify(projectID)
+    (itm) => slugify(itm.Name) === slugify(projectID),
 );
 
-// project.Name 报错
 if (!project) {
-  console.warn(`Project not found for slug: ${projectID}`);
-  throw new Error(`Project not found for slug: ${projectID}`);
+    console.warn(`Project not found for slug: ${projectID}`);
+    throw new Error(`Project not found for slug: ${projectID}`);
 }
 
 const humanize = (s?: string) =>
-  s?.toString()
-    .normalize('NFKC')
-    .replace(/\p{Pd}+|_/gu, ' ') // replace Unicode - → space
-    .replace(/\s+/g, ' ')        // merge多空格
-    .trim();
+    s?.toString()
+        .normalize("NFKC")
+        .replace(/\p{Pd}+|_/gu, " ")
+        .replace(/\s+/g, " ")
+        .trim();
 const displayName = humanize(project.Name);
 ---
 
 <ProjectLayout
-    title= {`${displayName} | Tiffany Xiu`}
+    title={`${displayName} | Tiffany Xiu`}
     description={project.ShortDesc}
 >
-    <!-- background image setting center blur -->
-    <div class="Fade_In flex_center absolute inset-0 w-full h-full z-[-1]">
-        <Image
-            src={project.Shot}
-            alt={`${displayName}_BG_Image`}
-            class="w-full h-full opacity-50 blur-md p-6 object-cover"
-            loading="eager"
-        />
-        <!-- 避免图片过亮 -->
-        <div class="bg-imgOverlayGradient w-full h-full absolute inset-0"></div>
-    </div>
-
-    <!-- 项目介绍卡片 project's logo, name, tech stack, source code buttons -->
-    <div class="flex_center flex-col gap-4 py-4">
-        <Image
-            src={project.Logo}
-            alt={`${displayName}_Image`}
-            class="Fade_Up"
-            width={100}
-            height={100}
-            loading="eager"
-        />
-        <h1
-            class="Fade_Up font-ubuntu text-[1.6em] md:text-[1.8em] tracking-wider md:tracking-[0.2em] text-center"
+    <article class="max-w-3xl mx-auto py-10 md:py-14">
+        <a
+            href="/#projects"
+            class="Fade_In inline-block text-sm opacity-50 hover:opacity-90 transition-opacity mb-8"
         >
+            ← Projects
+        </a>
+
+        <h1 class="Fade_Up font-ubuntu text-3xl md:text-4xl tracking-tight text-center">
             {displayName}
         </h1>
+        <p class="Fade_Up text-center opacity-70 mt-4 leading-relaxed">
+            {project.ShortDesc}
+        </p>
 
-        <!-- <div class="w-full flex_center gap-4"> -->
-        
-        <div class="w-full flex items-center justify-center
-             flex-wrap md:flex-nowrap
-             gap-2 sm:gap-3 md:gap-4"
-        >
-            {
-                project?.Tech?.map((tech, index) => {
-                    return (
-                        <Image
-                            src={tech.icon}
-                            alt={`TechIcon_${index}`}
-                            width={28}
-                            height={28}
-                            class="Fade_Stagger"
-                            loading="eager"
-                        />
-                    );
-                })
-            }
-        </div>
-
-        <div class="flex_center gap-4 text-[1em] flex-wrap">
+        <div class="Fade_Up flex_center gap-3 mt-6 text-sm flex-wrap">
             {project.Link && (
                 <a
                     href={project.Link}
                     target="_blank"
                     rel="noreferrer"
-                    class="Fade_Stagger flex_center gap-2 bg-gradient-to-r from-primary to-secondary px-5 py-2.5 rounded-full font-medium hover:scale-105 transition-transform shadow-lg"
+                    class="flex_center gap-2 px-4 py-2 rounded-full border border-white/25 hover:border-white/50 transition-colors"
                 >
-                    <ExternalLinkIcon size={20} />
-                    <span>Live Demo</span>
+                    <ExternalLinkIcon size={16} />
+                    <span>Live demo</span>
                 </a>
             )}
             {project.Source && (
                 <a
                     href={project.Source}
                     target="_blank"
-                    rel="author"
-                    class="Fade_Stagger flex_center gap-2 bg-LinkBtnGradient px-5 py-2.5 rounded-full border border-primary/30 hover:border-primary/60 transition-colors"
+                    rel="noreferrer"
+                    class="flex_center gap-2 px-4 py-2 rounded-full border border-white/25 hover:border-white/50 transition-colors"
                 >
-                    <svg
-                        stroke="currentColor"
-                        fill="currentColor"
-                        stroke-width="0"
-                        viewBox="0 0 16 16"
-                        color="#fff"
-                        height="20"
-                        width="20"
-                        xmlns="http://www.w3.org/2000/svg"
-                        style="color: var(--heroSocialColor);"
-                    >
-                        <path
-                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
-                        >
-                        </path>
-                    </svg>
-                    <span>Source Code</span>
+                    <span>Source</span>
                 </a>
             )}
         </div>
-    </div>
 
-    <!-- about the project -->
-    <h2 class="Fade_Up font-ubuntu text-[1.5em] pt-4 pb-3 w-full">
-        About the project:
-    </h2>
-    <div
-        class="flex justify-center items-center xl:items-start flex-col xl:flex-row gap-4 py-10"
-    >
-        <!-- mockup image on the left-hand side -->
-        <Image
-            src={project.Mockup}
-            alt={`${displayName}_Mockup_Image`}
-            width={600}
-            class="Fade_Up"
-            loading="eager"
-        />
-        <div class="Fade_Up flex_center flex-col gap-4">
-            {
-                project.Demo && (
-                    <div class="flex items-center flex-col gap-4 w-fit px-4 py-2 bg-LinkBtnGradient rounded-md mt-4 lg:mt-0">
-                        <h3 class="min-w-max my-auto">Demo Credentials</h3>
-
-                        <div class="flex justify-evenly w-full flex-col md:flex-row gap-2 text-[0.8em]">
-                            <div class="flex gap-4 bg-backgroundLite p-2 rounded-md">
-                                <span class="min-w-20 md:w-fit">Email : </span>
-                                <span id="emailContent" class="w-full">
-                                    {project.Demo?.email}
-                                </span>
-
-                                <button
-                                    id="emailCopyBtn"
-                                    class="flex_center relative"
-                                >
-                                    <ClipboardCopyIcon class="emailCopyIcon visible" />
-                                    <CheckIcon class="emailCopyIcon absolute invisible" />
-                                </button>
-                            </div>
-                            <div class="flex gap-4 bg-backgroundLite p-2 rounded-md">
-                                <span class="min-w-20 md:w-fit">
-                                    Password :{" "}
-                                </span>
-                                <span id="passContent" class="w-full">
-                                    {project.Demo?.password}
-                                </span>
-
-                                <button
-                                    id="passCopyBtn"
-                                    class="flex_center relative"
-                                >
-                                    <ClipboardCopyIcon class="passCopyIcon visible" />
-                                    <CheckIcon class="passCopyIcon absolute invisible" />
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                )
-            }
-
-            <!-- project description -->
-            <p class="w-full text-justify text-[1.1em] mt-4 px-4 indent-12">
-                {project.Desc}
+        {project.Tech && project.Tech.length > 0 && (
+            <p class="Fade_Up text-center text-sm opacity-45 mt-6 tracking-wide">
+                {project.Tech.map((tech) => tech.title).join(" · ")}
             </p>
-        </div>
-    </div>
+        )}
 
-    <!-- feature section with feature title and description -->
-    <SectionTitle title="Features" color="primary">
-        <div
-            class="grid grid-cols-1 md:grid-cols-2 gap-y-4 md:gap-y-6 md:gap-x-10 md:mx-4"
-        >
-            {
-                project.features.map((items) => (
-                    <div class="Fade_Up p-2 md:p-4 text-center md:text-start flex flex-col gap-3 border border-primaryLiteAlt sm:border-transparent hover:border-primaryLiteAlt bg-skillGradientAlt rounded-md transition-colors duration-200">
-                        <span class="font-ubuntu text-[1.125em]">
-                            {items.title}
-                        </span>
-                        <p class="md:pl-8 text-center md:text-justify">
-                            {items.description}
-                        </p>
-                    </div>
-                ))
-            }
-        </div>
-    </SectionTitle>
+        {project.Mockup && (
+            <Image
+                src={project.Mockup}
+                alt={`${displayName} preview`}
+                width={800}
+                class="Fade_Up w-full mt-12 rounded-lg"
+                loading="eager"
+            />
+        )}
 
-    <!-- What I Built section -->
-    {project.contributions && project.contributions.length > 0 && (
-        <SectionTitle title="What I Built" color="secondary">
-            <div class="max-w-3xl mx-auto">
-                <ul class="space-y-4">
+        <h2 class="Fade_Up font-ubuntu text-2xl tracking-tight text-center mt-16">
+            About
+        </h2>
+        <div class="Fade_Up w-10 h-px bg-[var(--text)] opacity-20 mt-3 mb-6 mx-auto"></div>
+        <p class="Fade_Up leading-relaxed opacity-85">
+            {project.Desc}
+        </p>
+
+        {project.contributions && project.contributions.length > 0 && (
+            <>
+                <h2 class="Fade_Up font-ubuntu text-2xl tracking-tight text-center mt-16">
+                    What I built
+                </h2>
+                <div class="Fade_Up w-10 h-px bg-[var(--text)] opacity-20 mt-3 mb-6 mx-auto"></div>
+                <ul class="space-y-3">
                     {project.contributions.map((item) => (
-                        <li class="Fade_Up flex items-start gap-4 p-4 bg-skillGradientAlt rounded-lg border border-secondaryLiteAlt/30 hover:border-secondary/50 transition-colors">
-                            <span class="text-secondary text-xl mt-0.5">▹</span>
-                            <span class="text-lg">{item}</span>
+                        <li class="Fade_Up flex items-start gap-3 opacity-85 leading-relaxed">
+                            <span class="opacity-40 mt-1">–</span>
+                            <span>{item}</span>
                         </li>
                     ))}
                 </ul>
-            </div>
-        </SectionTitle>
-    )}
-
-    <!--tech stack section with icon, title, and description -->
-    <CenterTitle title="Tech Stack" color="secondary" />
-    <div
-        class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-2 mb-96 4xl:mb-[30rem]"
-    >
-        {
-            project.Tech.map((tech) => (
-                <div class="Fade_Stagger flex_center flex-col gap-4 p-4 border border-secondaryLiteAlt sm:border-transparent hover:border-secondaryLiteAlt bg-skillGradientAlt rounded-md transition-colors duration-200">
-                    <div class="flex_center gap-4">
-                        <Image
-                            src={tech.icon}
-                            alt={tech.title}
-                            width={40}
-                            height={40}
-                        />
-                        <span class="text-[1.2em]">{tech.title}</span>
-                    </div>
-                    <p class="text-center">{tech.description}</p>
-                </div>
-            ))
-        }
-    </div>
+            </>
+        )}
+    </article>
 </ProjectLayout>
-
-<script is:inline type="module">
-    const emailCopyBtn = document.getElementById("emailCopyBtn");
-    const passCopyBtn = document.getElementById("passCopyBtn");
-    const emailContent = document.getElementById("emailContent");
-    const passContent = document.getElementById("passContent");
-    const emailCopyIcons = document.querySelectorAll(".emailCopyIcon");
-    const passCopyIcons = document.querySelectorAll(".passCopyIcon");
-
-    emailCopyBtn?.addEventListener("click", () => {
-        navigator.clipboard.writeText(emailContent?.textContent);
-
-        emailCopyIcons[0].classList.replace("visible", "invisible");
-        emailCopyIcons[1].classList.replace("invisible", "visible");
-
-        setTimeout(() => {
-            emailCopyIcons[0].classList.replace("invisible", "visible");
-            emailCopyIcons[1].classList.replace("visible", "invisible");
-        }, 2000);
-    });
-
-    passCopyBtn?.addEventListener("click", () => {
-        navigator.clipboard.writeText(passContent?.textContent);
-
-        passCopyIcons[0].classList.replace("visible", "invisible");
-        passCopyIcons[1].classList.replace("invisible", "visible");
-
-        setTimeout(() => {
-            passCopyIcons[0].classList.replace("invisible", "visible");
-            passCopyIcons[1].classList.replace("visible", "invisible");
-        }, 2000);
-    });
-</script>

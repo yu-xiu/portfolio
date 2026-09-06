@@ -1,6 +1,5 @@
 ---
 import { Image } from "astro:assets";
-import Avatar_250 from "../Avatar_250.webp";
 import about_avatar from "../about_avatar.webp";
 import { SectionTitle } from "./UI";
 ---
@@ -12,13 +11,11 @@ import { SectionTitle } from "./UI";
         className="flex flex-col justify-center"
     >
         <div class="flex_center flex-col lg:flex-row w-full max-w-5xl mx-auto h-full py-6 gap-10 lg:gap-14">
-            <!-- Avatar with glow effect -->
             <div class="Fade_Up relative flex-shrink-0">
-                <div class="absolute inset-0 bg-gradient-to-br from-primary/30 to-secondary/30 rounded-full blur-2xl scale-110"></div>
                 <Image
                     src={about_avatar}
                     alt="About_Avatar"
-                    class="relative rounded-full ring-4 ring-primary/20"
+                    class="relative rounded-full ring-1 ring-white/15"
                     width={280}
                     height={280}
                     srcset={`${about_avatar.src} 250w, ${about_avatar.src} 300w`}
@@ -28,10 +25,10 @@ import { SectionTitle } from "./UI";
             </div>
 
             <div
-                class="Fade_Up w-full lg:max-w-xl flex justify-center items-start flex-col gap-5 lg:border-l-2 border-primary/50 py-8 lg:pl-12"
+                class="Fade_Up w-full lg:max-w-xl flex justify-center items-start flex-col gap-5 lg:border-l border-white/15 py-8 lg:pl-12"
             >
                 <h2 class="Fade_Up text-2xl lg:text-3xl font-bold">
-                    Welcome to my page! <span class="inline-block animate-wave">👋🏻</span>
+                    Welcome to my page.
                 </h2>
                 <p class="Fade_Up text-base lg:text-lg leading-relaxed text-justify opacity-90">
                     I'm Tiffany, an AI builder and startup founder. 
@@ -50,15 +47,3 @@ import { SectionTitle } from "./UI";
 
     </SectionTitle>
 </section>
-
-<style>
-    @keyframes wave {
-        0%, 100% { transform: rotate(0deg); }
-        25% { transform: rotate(20deg); }
-        75% { transform: rotate(-20deg); }
-    }
-    .animate-wave {
-        animation: wave 1.5s ease-in-out infinite;
-        transform-origin: 70% 70%;
-    }
-</style>

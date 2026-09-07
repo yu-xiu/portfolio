@@ -2,6 +2,17 @@
 import { Image } from "astro:assets";
 import about_avatar from "../about_avatar.webp";
 import { SectionTitle } from "./UI";
+
+const quickFacts = [
+    { label: "Based in", value: "Bay Area, CA" },
+    { label: "BSCS | MSCS", value: "San José State University" },
+    { label: "Visiting Grad", value: "Stanford University Summer Session" },
+    { label: "Previously", value: "NASA Ames" },
+];
+
+const cardClass =
+    "rounded-xl border border-white/10 bg-white/[0.02] hover:border-white/20 transition-colors";
+const labelClass = "text-[0.7rem] uppercase tracking-wider text-white/35";
 ---
 
 <section id="about" class="w-full px-6 py-12 lg:py-16 bg-background">
@@ -10,40 +21,67 @@ import { SectionTitle } from "./UI";
         color="primary"
         className="flex flex-col justify-center"
     >
-        <div class="flex_center flex-col lg:flex-row w-full max-w-5xl mx-auto h-full py-6 gap-10 lg:gap-14">
-            <div class="Fade_Up relative flex-shrink-0">
+        <div
+            class="w-full max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 py-6"
+        >
+            <!-- Avatar -->
+            <div
+                class={`Fade_Up relative overflow-hidden min-h-[300px] md:row-span-2 ${cardClass}`}
+            >
                 <Image
                     src={about_avatar}
-                    alt="About_Avatar"
-                    class="relative rounded-full ring-1 ring-white/15"
-                    width={280}
-                    height={280}
-                    srcset={`${about_avatar.src} 250w, ${about_avatar.src} 300w`}
-                    sizes="(min-width: 1024px) 280px, 250px"
+                    alt="Tiffany"
+                    class="absolute inset-0 w-full h-full object-cover object-center"
+                    width={560}
+                    height={741}
                     loading="lazy"
                 />
             </div>
 
-            <div
-                class="Fade_Up w-full lg:max-w-xl flex justify-center items-start flex-col gap-5 lg:border-l border-white/15 py-8 lg:pl-12"
-            >
-                <h2 class="Fade_Up text-2xl lg:text-3xl font-bold">
-                    Welcome to my page.
-                </h2>
-                <p class="Fade_Up text-base lg:text-lg leading-relaxed text-justify opacity-90">
-                    I'm Tiffany, an AI builder and startup founder. 
-                    I like taking ambitious ideas and turning them into products people can actually use.
-                    I work across <span class="text-primary font-medium">NLP</span>, <span class="text-primary font-medium">RAG</span>, and <span class="text-primary font-medium">Generative AI</span>, and I'm especially interested in making AI systems more reliable and explainable.
-                </p>
-                <p class="Fade_Up text-base lg:text-lg leading-relaxed text-justify opacity-90">
-                    Before that, I interned at <span class="text-secondary font-medium">NASA Ames</span>, contributing to spacecraft system modeling and testing. 
-                    The experience shaped how I think about engineering: build for real constraints, test carefully, and prioritize systems that hold up in the real world. 
-                </p>
-                <p class="Fade_Up text-base lg:text-lg leading-relaxed text-justify opacity-90">
-                    Now I'm building an early-stage AI startup, exploring agent workflows and retrieval-driven experiences that bridge research and real-world impact.
+            <!-- Who I am -->
+            <div class={`Fade_Up md:col-span-1 lg:col-span-2 p-5 ${cardClass}`}>
+                <p class={labelClass}>Who I am</p>
+                <h3 class="mt-3 text-lg lg:text-xl font-ubuntu tracking-tight leading-snug">
+                    I turn ambitious AI ideas into products people can actually use.
+                </h3>
+                <p class="mt-3 text-sm leading-relaxed text-white/70">
+                    As an AI builder and startup founder. I build practical AI products using
+                    <span class="text-primary font-medium">NLP</span>,
+                    <span class="text-primary font-medium">RAG</span>, 
+                    <span class="text-primary font-medium">agents</span>, and
+                    <span class="text-primary font-medium">Generative AI</span>, with a focus on making them useful, reliable, and enjoyable to use.
                 </p>
             </div>
-        </div>
 
+            <!-- NASA -->
+            <div class={`Fade_Up md:col-span-1 p-5 ${cardClass}`}>
+                <p class={labelClass}>Where I learned to build</p>
+                <p class="mt-3 text-sm leading-relaxed text-white/70">
+                    I interned at <span class="text-secondary font-medium">NASA Ames</span>,
+                    working on spacecraft system modeling and testing. It shaped how I think
+                    about engineering across interconnected systems and tools, and
+                    strengthened my skills in system design, tool integration, and testing.
+                    Along the way, hackathons like
+                    <span class="text-secondary font-medium">TreeHacks</span> and
+                    <span class="text-secondary font-medium">Cal Hacks</span> gave me the
+                    push to start building my own products and eventually my own startup.
+                </p>
+            </div>
+
+            <!-- Quick facts -->
+            <div class={`Fade_Up md:col-span-2 lg:col-span-1 p-5 ${cardClass}`}>
+                <p class={labelClass}>Quick facts</p>
+                <dl class="mt-4 flex flex-col gap-3">
+                    {
+                        quickFacts.map((fact) => (
+                            <div class="flex flex-col">
+                                <dt class="text-xs text-white/40">{fact.label}</dt>
+                                <dd class="text-sm text-white/80">{fact.value}</dd>
+                            </div>
+                        ))
+                    }
+                </dl>
+            </div>
+        </div>
     </SectionTitle>
 </section>

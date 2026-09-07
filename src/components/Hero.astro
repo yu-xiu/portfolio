@@ -5,47 +5,49 @@ import Avatar_westie from "../Avatar_westie.webp"
 
 <section
     id="Hero"
-    class="w-full h-[calc(100vh-4rem)] px-6 py-4 bg-background flex justify-evenly lg:justify-around items-center flex-col-reverse lg:flex-row overflow-hidden"
+    class="w-full min-h-[calc(100vh-4rem)] px-6 py-12 lg:py-4 bg-background flex justify-evenly lg:justify-around items-center flex-col-reverse lg:flex-row"
 >
     <!-- Hero Intro Info -->
-    <div class="w-full lg:w-fit flex justify-start items-center flex-col gap-8">
-        <div class="text-[16px] sm:text-[18px] lg:text-[26px] text-center lg:text-left px-1">
+    <div class="w-full lg:w-fit flex justify-start items-center flex-col gap-6">
+        <div class="text-[14px] sm:text-[16px] lg:text-[21px] text-center lg:text-left px-1">
+            
+
             <p class="Fade_Stagger">Hi, I'm</p>
             <h1
-                class="Fade_Stagger gradientText font-ubuntu text-[3.4em] sm:text-[4em] lg:text-[9rem] leading-tight"
+                class="Fade_Stagger text-white font-ubuntu text-[3.2em] sm:text-[3.6em] lg:text-[6.5rem] leading-tight"
             >
                 Tiffany.
             </h1>
             <p class="Fade_Stagger">
                 I design and build AI-powered products.
             </p>
-            <p class="Fade_Stagger leading-relaxed">
-                NLP • RAG • Generative AI • Explainable RL
+            <p class="Fade_Stagger mt-3 text-xs lg:text-sm leading-relaxed text-white/60">
+                Agentic AI · NLP · RAG · RL · Explainable ML
             </p>
-            <p class="Fade_Stagger">
-                I turn ideas into shipped experiences.
+            <p class="Fade_Stagger mt-2 text-[0.7rem] lg:text-xs tracking-wide text-white/45">
+                Bay Area, CA · ex-NASA Ames · Darluwin AI Labs
             </p>
         </div>
 
         <!-- CTA Buttons -->
-        <div class="Fade_Stagger flex flex-wrap justify-center lg:justify-start gap-4 mt-2">
+        <div class="Fade_Stagger flex flex-wrap justify-center lg:justify-start gap-3 mt-1 w-full">
             <a 
                 href="#projects" 
-                class="px-6 py-3 bg-primary text-white rounded-full font-medium hover:opacity-90 transition-opacity duration-200"
+                class="px-5 py-2.5 text-sm bg-primary text-white rounded-full font-medium hover:opacity-90 transition-opacity duration-200"
             >
                 View My Work
             </a>
             <a 
                 href="/yu_xiu_resume.pdf" 
                 target="_blank"
-                class="px-6 py-3 border border-white/25 text-white rounded-full font-medium hover:border-white/50 transition-colors duration-200"
+                class="px-5 py-2.5 text-sm border border-white/25 text-white rounded-full font-medium hover:border-white/50 transition-colors duration-200"
             >
                 Resume
             </a>
         </div>
 
         <div
-            class="Fade_Stagger flex justify-center lg:justify-start items-center w-full gap-10 py-4"
+            class="Fade_Stagger flex justify-center lg:justify-start items-center w-full gap-8 py-2"
         >
             <a
                 href="https://github.com/yu-xiu"
@@ -61,8 +63,8 @@ import Avatar_westie from "../Avatar_westie.webp"
                     stroke-width="0"
                     viewBox="0 0 16 16"
                     color="#fff"
-                    height="30"
-                    width="30"
+                    height="25"
+                    width="25"
                     xmlns="http://www.w3.org/2000/svg"
                     style="color: var(--heroSocialColor);"
                 >
@@ -86,8 +88,8 @@ import Avatar_westie from "../Avatar_westie.webp"
                     stroke-width="0"
                     viewBox="0 0 16 16"
                     color="var(--text)"
-                    height="30"
-                    width="30"
+                    height="25"
+                    width="25"
                     xmlns="http://www.w3.org/2000/svg"
                     style="color: var(--heroSocialColor);"
                 >
@@ -100,13 +102,13 @@ import Avatar_westie from "../Avatar_westie.webp"
         </div>
     </div>
 
-    <div class="Spring_Up flex_center w-[200px] lg:w-[280px]">
+    <div class="Spring_Up flex_center w-[160px] lg:w-[225px]">
         <Image
             src={Avatar_westie}
             alt="Tiffany with her Westie"
             class="w-full h-auto"
-            width="280"
-            height="280"
+            width="225"
+            height="225"
             loading="eager"
         />
     </div>

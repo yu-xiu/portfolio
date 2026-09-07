@@ -4,6 +4,7 @@ export function getStaticPaths() {
         { params: { projectID: "xai-emotion" } },
         { params: { projectID: "poli-nlp-classifier" } },
         { params: { projectID: "davqi-educationai" } },
+        { params: { projectID: "daresume" } },
     ];
 }
 const { projectID } = Astro.params;
@@ -86,9 +87,23 @@ const displayName = humanize(project.Name);
         </div>
 
         {project.Tech && project.Tech.length > 0 && (
-            <p class="Fade_Up text-center text-sm opacity-45 mt-6 tracking-wide">
-                {project.Tech.map((tech) => tech.title).join(" · ")}
-            </p>
+            <div class="Fade_Up flex_center flex-wrap gap-x-5 gap-y-3 mt-8">
+                {project.Tech.map((tech) => (
+                    <span
+                        class="flex items-center gap-2 text-sm tracking-wide opacity-60"
+                        title={tech.description}
+                    >
+                        <Image
+                            class="w-[18px] h-[18px] object-contain"
+                            src={tech.icon}
+                            alt=""
+                            width={18}
+                            height={18}
+                        />
+                        {tech.title}
+                    </span>
+                ))}
+            </div>
         )}
 
         {project.Mockup && (
@@ -108,6 +123,25 @@ const displayName = humanize(project.Name);
         <p class="Fade_Up leading-relaxed opacity-85">
             {project.Desc}
         </p>
+
+        {project.features && project.features.length > 0 && (
+            <>
+                <h2 class="Fade_Up font-ubuntu text-2xl tracking-tight text-center mt-16">
+                    Features
+                </h2>
+                <div class="Fade_Up w-10 h-px bg-[var(--text)] opacity-20 mt-3 mb-6 mx-auto"></div>
+                <dl class="space-y-5">
+                    {project.features.map((feature) => (
+                        <div class="Fade_Up">
+                            <dt class="font-medium">{feature.title}</dt>
+                            <dd class="mt-1 leading-relaxed opacity-70">
+                                {feature.description}
+                            </dd>
+                        </div>
+                    ))}
+                </dl>
+            </>
+        )}
 
         {project.contributions && project.contributions.length > 0 && (
             <>

@@ -1,6 +1,6 @@
 // Add projects in this file
 import {
-    PythonIcon, Scikitlearn, Googlecolab, XGBoost, SHAP, VercelIcon, Heroku, HuggingFace, FlaskIcon, FigmaIcon, Spacy, HtmlIcon, CssIcon, JsIcon, ReactIcon, NodeIcon, TsIcon, NextIcon, MysqlIcon, MongoIcon, GdriveIcon, SocketIoIcon, RestApiIcon, PhpIcon, ViteIcon, NextAuthIcon, ReduxIcon, TailwindIcon, ZustandIcon, AstroIcon, NanostoresIcon, D3JsIcon, ReactQueryIcon, EdgeStoreIcon
+    PythonIcon, Scikitlearn, Googlecolab, XGBoost, SHAP, LangGraphIcon, RagIcon, VercelIcon, Heroku, HuggingFace, FlaskIcon, FastApiIcon, SupabaseIcon, FigmaIcon, Spacy, HtmlIcon, CssIcon, JsIcon, ReactIcon, NodeIcon, TsIcon, NextIcon, MysqlIcon, MongoIcon, GdriveIcon, SocketIoIcon, RestApiIcon, PhpIcon, ViteIcon, NextAuthIcon, ReduxIcon, TailwindIcon, ZustandIcon, AstroIcon, NanostoresIcon, D3JsIcon, ReactQueryIcon, EdgeStoreIcon
 } from "../assets/Icons"
 
 import {
@@ -8,11 +8,11 @@ import {
 } from "../assets/Logos"
 
 import {
-    XAIEmotion, PoliShots, DaVQiShots
+    XAIEmotion, PoliShots, DaVQiShots, DaResumeShots
 } from "../assets/Shots"
 
 import {
-    XAIEmotionMockup, PoliMockup, DaVQiMockup
+    XAIEmotionMockup, PoliMockup, DaVQiMockup, DaResumeMockup
 } from "../assets/Mockup"
 
 
@@ -105,6 +105,26 @@ const TechInfo = {
         title: "Flask",
         description: "Flask is a lightweight WSGI web application framework. It is designed to make getting started quick and easy, with the ability to scale up to complex applications.",
         icon: FlaskIcon
+    },
+    FastAPI: {
+        title: "FastAPI",
+        description: "FastAPI is a modern, high-performance Python web framework for building APIs, using standard type hints for automatic validation, serialization, and interactive documentation.",
+        icon: FastApiIcon
+    },
+    Supabase: {
+        title: "Supabase",
+        description: "Supabase is an open-source backend platform built on PostgreSQL, providing a hosted database, authentication, file storage, and vector search behind a single API.",
+        icon: SupabaseIcon
+    },
+    LangGraph: {
+        title: "LangGraph",
+        description: "LangGraph is a framework for building stateful, multi-step agent workflows as graphs, giving each node explicit control over routing, retries, and persisted state across long-running runs.",
+        icon: LangGraphIcon
+    },
+    RAG: {
+        title: "RAG",
+        description: "Retrieval-Augmented Generation grounds a language model's output in retrieved source documents, so responses cite real evidence from a knowledge base instead of relying on the model's memory alone.",
+        icon: RagIcon
     },
     Spacy: {
         title: "Spacy",
@@ -238,9 +258,61 @@ const FeatureList = {
 // Add projects to the project list
 export const ProjectsList: ProjectsListType = [
     {
+        Name: "DaResume",
+        ShortDesc: "AI resume analyzer that matches job requirements. It aslo helps you prepare for the interview questions, track the experience you have documented, and keep a record of the roles you have applied to.",
+        Desc: "DaResume turns a job description into an evidence map of your resume. Paste a posting and the analyzer extracts each requirement, then searches your experience for the specific line that proves it, labeling every match as Strong, Partial, or No evidence and rolling the results up into an overall match score. This app helps you prepare for the interview questions based your expereince and the job requirements. It tracks your expereince and job applications, so you can see your progress over time.",
+        Shot: DaResumeShots,
+        Mockup: DaResumeMockup,
+        Theme: "#FFF",
+        Status: "completed",
+        Link: "https://www.daresume.com/",
+        Source: "",
+        Tech: [TechInfo.React, TechInfo.TypeScript, TechInfo.FastAPI, TechInfo.Python, TechInfo.RAG, TechInfo.LangGraph, TechInfo.Supabase],
+        features: [
+            {
+                title: "Requirement-to-Evidence Mapping",
+                description: "Paste a job description and every requirement is matched to the specific line of your resume that supports it, so you can see at a glance what you have proven and what you have only claimed."
+            },
+            {
+                title: "Strong / Partial / No Evidence Scoring",
+                description: "Each requirement is graded on the strength of its supporting evidence and combined into an overall match score for the role."
+            },
+            {
+                title: "Gap Detection",
+                description: "Detects the gaps in your resume that are not covered by the job requirements. Suggestions for improving your resume and actions to take to fill the gaps."
+            },
+            {
+                title: "Resume Edits",
+                description: "Edits your resume to fill the gaps and improve your chances of getting the job."
+            },
+            {
+                title: "Interview Preparation",
+                description: "Generates the questions your own evidence invites, letting you rehearse the stories behind each matched requirement."
+            },
+            {
+                title: "Experience and Application Tracking",
+                description: "Keeps a running record of the experience you have documented and the roles you have applied to, so each new analysis builds on the last."
+            }
+        ],
+        contributions: [
+            "Designed and built the product end to end, from the evidence-map concept to the shipped beta",
+            "Built the retrieval-augmented analysis pipeline that extracts requirements from a job description and aligns them to the resume lines that support them",
+            "Orchestrated the multi-step analysis as a LangGraph agent workflow, keeping extraction, retrieval, and scoring as separately controllable stages",
+            "Designed the Strong / Partial / No evidence rubric and the overall match scoring model",
+            "Implemented FastAPI services for analysis and a Supabase backend for auth, storage, and retrieval",
+            "Shipped the web app with subscription tiers and a free monthly analysis quota",
+            "Developed the evidence-map interface and interview preparation flows"
+        ],
+        hideProject: false,
+        LogoSize: 50,
+        versions: [
+            { title: "DaResume", version: "1" }
+        ]
+    },
+    {
         Name: "DaVQi-EducationAI",
-        ShortDesc: "AI-powered K–12 science practice with instant short-answer feedback and misconception detection for students and homeschool families.",
-        Desc: "An AI-powered science practice companion for K–12 and homeschool learners. Students get targeted practice questions across key topics and receive instant, rubric-style feedback on short answers—not just right or wrong, but why. The system analyzes responses to identify misconceptions, highlights missing concepts, and provides actionable hints and explanations tailored to the student’s level. Parents and educators can track progress over time with clear summaries of strengths, weak areas, and recommended next practice. Designed for quick daily practice, review before tests, and guided homeschooling sessions—making science learning more efficient, engaging, and confidence-building.",
+        ShortDesc: "AI-powered math and programming learning platform for students, teachers, and parents",
+        Desc: "An AI-powered learning platform for math and programming. Students work through targeted practice problems and get instant feedback, but where the reasoning or the code broke down. The system analyzes each submission to pinpoint misconceptions, highlights the missing step or concept, and offers hints scaled to the student's level instead of handing over the answer. Teachers and parents can follow progress over time with clear summaries of strengths, weak areas, and what to practice next.",
         Logo: DaVQiLogo,
         Shot: DaVQiShots,
         Mockup: DaVQiMockup,
@@ -252,27 +324,27 @@ export const ProjectsList: ProjectsListType = [
         features: [
             {
                 title: "Instant AI Feedback",
-                description: "Students receive rubric-style feedback on short answers instantly—not just right or wrong, but detailed explanations of why."
+                description: "Students get rubric-style feedback on math solutions and code submissions the moment they submit—not just right or wrong, but an explanation of where the work went off track."
             },
             {
                 title: "Misconception Detection",
-                description: "AI analyzes responses to identify common misconceptions (e.g., confusing mass vs. weight) and provides targeted corrections."
+                description: "The model looks past the final answer to catch the underlying error, from sign mistakes when moving terms across an equation to off-by-one loop bounds, and responds with a targeted correction."
             },
             {
-                title: "Adaptive Learning",
-                description: "Questions and hints are tailored to the student's level, making learning more personalized and effective."
+                title: "Guided Hints, Not Answers",
+                description: "Problems and hints adapt to the student's level and reveal one step at a time, so the student still does the thinking."
             },
             {
                 title: "Progress Tracking",
-                description: "Parents and educators can track progress with clear summaries of strengths, weak areas, and recommended next steps."
+                description: "Teachers and parents can follow progress with clear summaries of strengths, weak areas, and recommended next steps."
             },
             {
-                title: "K-12 Science Coverage",
-                description: "Comprehensive practice questions across key science topics for elementary through high school students."
+                title: "Math and Programming Coverage",
+                description: "Practice spanning arithmetic, algebra, and pre-calculus, plus introductory programming—variables, loops, functions, and basic data structures."
             },
             {
-                title: "Homeschool Friendly",
-                description: "Designed for quick daily practice, test review, and guided homeschooling sessions."
+                title: "Built for Classroom and Home",
+                description: "Fits quick daily practice, review before a test, and guided sessions led by a teacher or a parent."
             }
         ],
         contributions: [
@@ -291,8 +363,8 @@ export const ProjectsList: ProjectsListType = [
     },
     {
         Name: "XAI-Emotion",
-        ShortDesc: "Predicts emotional arousal from audio features using machine learning, with SHAP-based explanations of feature importance.",
-        Desc: "This project predicts arousal — a measure of emotional intensity — from audio-derived features using machine learning models. It further explains the predictions through SHAP (SHapley Additive exPlanations), highlighting the relative importance of different features. The goal is to build an AI model targeted at arousal detection and to provide transparent insights into how feature contributions affect model decisions.",
+        ShortDesc: "Explainable AI (XAI). Predicts emotional arousal from audio features using machine learning, with SHAP-based explanations of feature importance.",
+        Desc: "This project predicts arousal, a measure of emotional intensity from audio-derived features using machine learning models. It further explains the predictions through SHAP (SHapley Additive exPlanations), highlighting the relative importance of different features. The goal is to build an AI model targeted at arousal detection and to provide transparent insights into how feature contributions affect model decisions.",
         Logo: XAIEmotionLogo,
         Shot: XAIEmotion,
         Mockup: XAIEmotionMockup,

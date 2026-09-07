@@ -59,15 +59,23 @@ import {
     Simulink,
     AndroidStudio,
     SHAP,
-    FlaskIcon
+    FlaskIcon,
+    FastApiIcon,
+    SupabaseIcon,
+    LangGraphIcon,
+    RagIcon
 } from "../assets/Icons";
 import { GithubIcon } from "../assets/SVGs";
 
 export const CoreStack = [
     { name: "Python", icon: PythonIcon, link: "https://www.python.org/" },
+    { name: "RAG", icon: RagIcon, link: "https://arxiv.org/abs/2005.11401" },
+    { name: "LangGraph", icon: LangGraphIcon, link: "https://www.langchain.com/langgraph" },
+    { name: "HuggingFace", icon: HuggingFace, link: "https://huggingface.co/" },
+    { name: "FastAPI", icon: FastApiIcon, link: "https://fastapi.tiangolo.com/" },
+    { name: "Supabase", icon: SupabaseIcon, link: "https://supabase.com/" },
     { name: "PyTorch", icon: Pytorch, link: "https://pytorch.org/" },
     { name: "TensorFlow", icon: TensorFlow, link: "https://www.tensorflow.org/" },
-    { name: "HuggingFace", icon: HuggingFace, link: "https://huggingface.co/" },
     { name: "spaCy", icon: Spacy, link: "https://spacy.io/" },
     { name: "SHAP", icon: SHAP, link: "https://shap.readthedocs.io/en/latest/#" },
     { name: "Scikit-learn", icon: Scikitlearn, link: "https://scikit-learn.org/stable/" },

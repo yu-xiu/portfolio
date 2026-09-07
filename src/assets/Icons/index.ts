@@ -28,6 +28,8 @@ export { default as GdriveIcon } from "./gdrive.svg"
 export { default as NextAuthIcon } from "./nextauth.svg"
 export { default as EdgeStoreIcon } from "./edgestore.webp"
 export { default as FlaskIcon } from "./flask-name.svg"
+export { default as FastApiIcon } from "./fastapi.svg"
+export { default as SupabaseIcon } from "./supabase.svg"
 
 // Programming-Stack
 export { default as PythonIcon } from "./python.svg"
@@ -64,6 +66,8 @@ export { default as HuggingFace } from "./hugging-face.svg"
 export { default as TensorFlow } from "./tensorflow.svg"
 export { default as XGBoost } from "./XGBoost.svg"
 export { default as SHAP } from "./shap.svg"
+export { default as LangGraphIcon } from "./langgraph.svg"
+export { default as RagIcon } from "./rag.svg"
 
 // Cloud-Devops
 export { default as Docker } from "./docker.svg"

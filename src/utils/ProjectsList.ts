@@ -312,7 +312,7 @@ export const ProjectsList: ProjectsListType = [
     {
         Name: "DaVQi-EducationAI",
         ShortDesc: "AI-powered math and programming learning platform for students, teachers, and parents",
-        Desc: "An AI-powered learning platform for math and programming. Students work through targeted practice problems and get instant feedback, but where the reasoning or the code broke down. The system analyzes each submission to pinpoint misconceptions, highlights the missing step or concept, and offers hints scaled to the student's level instead of handing over the answer. Teachers and parents can follow progress over time with clear summaries of strengths, weak areas, and what to practice next.",
+        Desc: "An AI-powered learning platform for math and programming. Students work through targeted practice problems and get instant feedback. The system analyzes each submission to pinpoint misconceptions, highlights the missing step or concept, and offers hints scaled to the student's level instead of handing over the answer. Teachers and parents can follow progress over time with clear summaries of strengths, weak areas, and what to practice next.",
         Logo: DaVQiLogo,
         Shot: DaVQiShots,
         Mockup: DaVQiMockup,
